@@ -8,8 +8,7 @@ import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import {
   AccountBookFill, AlertFill, AlertOutline, VideoCameraFill, UploadOutline, UserOutline,
-  LockFill, MenuFoldOutline
-} from '@ant-design/icons-angular/icons';
+  LockFill, MenuFoldOutline } from '@ant-design/icons-angular/icons';
 import { SideNavModule } from 'carbon-components-angular';
 
 const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, VideoCameraFill, UploadOutline, UserOutline,
