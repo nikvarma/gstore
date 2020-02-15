@@ -1,0 +1,17 @@
+<ng-container *ngFor="let item of sliderList">
+    <div class="slider-box" [class.no-border]="noBorder">
+        <nz-card [nzCover]="coverTemplate">
+            <nz-card-meta class="slider-text" [nzTitle]="item.title" [nzDescription]="item.subtitle"
+                [nzAvatar]="avatarTemplate">
+            </nz-card-meta>
+        </nz-card>
+        <ng-template #avatarTemplate>
+            <nz-avatar [nzSrc]="item.avatar" class="slider-avatar" *ngIf="item.avatar"></nz-avatar>
+        </ng-template>
+        <ng-template #coverTemplate>
+            <div class="slider-image">
+                <img [alt]="item.title" [src]="item.image" *ngIf="item.image" />
+            </div>
+        </ng-template>
+    </div>
+</ng-container>

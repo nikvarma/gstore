@@ -1,0 +1,15 @@
+:host ::ng-deep .home-top-carousel {
+  display: block;
+  position: relative;
+  & [nz-carousel-content] {
+    text-align: center;
+    height: 400px;
+    line-height: 400px;
+    color: #fff;
+    overflow: hidden;
+    & img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+}

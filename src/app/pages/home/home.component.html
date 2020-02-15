@@ -1,0 +1,32 @@
+<div class="pt-2 bg-white">
+    <app-carousel class="home-top-carousel" [playSpeed]="8000" [imageList]="imageBannerList"></app-carousel>
+</div>
+<div nz-menu-divider></div>
+<div class="pb-2 pt-2 bg-white shadow-b-10">
+    <div class="app-container">
+        <div nz-row>
+            <div nz-col class="plr-1">
+                <app-card-slider class="text-center block-content" [noBorder]="true" [sliderList]="productCategory">
+                </app-card-slider>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ptb-40 bg-light">
+    <div class="app-container">
+        <div class="container-header">
+            <h5 class="heading-5">Top Savers Today
+                <span class="tag-label badge-success text-white bg-default badge">20% OFF</span>
+                <button class="btn btn-view-all secondary-text set-right">View All</button>
+            </h5>
+            <div class="clear-all"></div>
+        </div>
+        <div class="inline-slider">
+            <card-inline-slider [showSlideIcon]="true" [enableLoopSlide]="true">
+                <ng-container *ngFor="let product of productList;">
+                    <app-card-product class="btn inline-slide" [productDetail]="product"></app-card-product>
+                </ng-container>
+            </card-inline-slider>
+        </div>
+    </div>
+</div>
