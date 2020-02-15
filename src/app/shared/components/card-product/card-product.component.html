@@ -1,0 +1,43 @@
+<div class="card-container text-center bg-white">
+    <div class="card-detail">
+        <div class="product-card-header">
+            <span class="badge badge-success" [innerText]="productDetail.discountInPer + '% OFF'"></span>
+            <img [src]="productDetail.thumbnail" />
+            <span class="veg-status"></span>
+        </div>
+        <div class="product-card-content">
+            <h5 [innerText]="productDetail.title"></h5>
+            <h6>
+                <strong>
+                    <span class="tag-color p-5">
+                        <i nz-icon nzType="check-circle" nzTheme="outline"></i>
+                    </span>
+                    <span [innerText]="productDetail.subTitle"></span>
+                </strong>
+                <span class="font-w400" [innerText]="'-' + productDetail.weight + productDetail.weightUnit"></span>
+            </h6>
+        </div>
+        <div class="product-card-footer">
+            <p class="offer-price">
+                <span class="discount-price"
+                    [innerText]="(productDetail.discountInPer / 100) * productDetail.actualPrice"></span>
+                <i nz-icon nzType="tags" class="m-5" nzTheme="outline"></i>
+                <span class="regular-price" [innerText]="productDetail.actualPrice"></span>
+            </p>
+            <button class="btn btn-secondary" [class.hide]="isAddedInCart" (click)="addToCart($event)">
+                <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+                Add To Cart
+            </button>
+            <div [class.hide]="!isAddedInCart" class="product-add-btn">
+                <button class="btn btn-icon" (click)="addSameItem()">
+                    <i nz-icon nzType="plus" nzTheme="outline"></i>
+                </button>
+                <input type="text" name="sameItemInCartCount_{{ productDetail.id }}" [(ngModel)]="sameItemInCartCount"
+                    id="sameItemInCartCount_{{ productDetail.id }}" />
+                <button class="btn btn-icon" (click)="removeSameItem()">
+                    <i nz-icon nzType="minus" nzTheme="outline"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

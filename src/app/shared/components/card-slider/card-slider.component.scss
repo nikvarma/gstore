@@ -1,0 +1,52 @@
+.slider-box {
+  width: 150px;
+  flex-grow: 1;
+  margin: 5px;
+  cursor: pointer;
+  display: inline-block;
+  & .slider-avatar {
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  & .slider-image {
+    & img {
+      width: 100%;
+      height: auto;
+      transition-duration: 0.4s;
+    }
+    &:hover img {
+      transform: scale(1.09);
+    }
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50px;
+    object-fit: scale-down;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+:host ::ng-deep .slider-box {
+  &.no-border {
+    & .ant-card-bordered {
+      border: 0;
+    }
+  }
+  & .ant-card-body {
+    padding: 10px;
+  }
+  & .ant-card-body {
+    & nz-card-meta.slider-text {
+      text-align: center;
+      & .ant-card-meta-detail {
+        & .ant-card-meta-title {
+          font-size: 13px;
+        }
+        & .ant-card-meta-description {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
