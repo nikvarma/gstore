@@ -1,0 +1,13 @@
+<div class="left-arrow" *ngIf="showSlideIcon">
+    <button class="btn btn-icon" (click)="onSlideChange('pervious')">
+        <i nz-icon nzType="left-circle" nzTheme="outline"></i>
+    </button>
+</div>
+<div class="inline-slider-box" appCardSlider>
+    <ng-content #inlineSliderContent id="inlineSliderContent"></ng-content>
+</div>
+<div class="right-arrow" *ngIf="showSlideIcon">
+    <button class="btn btn-icon" (click)="onSlideChange('next')">
+        <i nz-icon nzType="right-circle" nzTheme="outline"></i>
+    </button>
+</div>

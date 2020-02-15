@@ -1,0 +1,18 @@
+.layout {
+  & .menu-left-side {
+    z-index: 9;
+    min-height: 100%;
+    position: absolute;
+  }
+  & .ant-top-header {
+    padding: 0;
+    min-height: 136px;
+    background-color: #f0f2f5;
+  }
+  & .ant-render-content {
+    background-color: #f0f2f5;
+  }
+  & .ant-bottom-footer {
+    background-color: #f0f2f5;
+  }
+}

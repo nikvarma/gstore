@@ -1,0 +1,91 @@
+<div class="bg-black pb-2 pt-2">
+    <div class="app-container">
+        <div nz-row>
+            <div nz-col nzMd="12" nzLg="12" class="header-top-bar plr-1">
+                <a href="javascript:void(0);" class="text-white hover-white">20% cashback for all users | Code:
+                </a>
+                <span class="text-icon mr-4">
+                    <i nz-icon nzType="tag" class="text-white" nzTheme="fill"></i>
+                </span>
+                <strong>
+                    <span class="text-white">GROFERS13</span>
+                </strong>
+            </div>
+            <div nz-col nzMd="12" nzLg="12" class="header-top-bar plr-1 text-right">
+                <a role="button" class="mlr-2">
+                    <span class="text-white mr-4"><i nz-icon nzType="environment" nzTheme="fill"></i></span>
+                    <span class="text-white" [innerText]="currLocation"></span>
+                </a>
+                <a [routerLink]="['auth', 'login']" class="mlr-2">
+                    <span class="text-white mr-4"><i nz-icon nzType="export" nzTheme="outline"></i></span>
+                    <span class="text-white">Sign In</span>
+                </a>
+                <a [routerLink]="['auth', 'sign-up']" class="mlr-2">
+                    <span class="text-white mr-4"><i nz-icon nzType="user" nzTheme="outline"></i></span>
+                    <span class="text-white">Sign Up</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pb-2 pt-2 bg-default">
+    <div class="app-container">
+        <div nz-row>
+            <div nz-col nzMd="4" nzLg="6" class="plr-1 logo-box">
+                <a [routerLink]="['home']" class="logo-text">
+                    <span class="mr-4">
+                        <i nz-icon nzType="shopping" nzTheme="outline"></i>
+                    </span>
+                    <span>GroceriStore</span>
+                </a>
+            </div>
+            <div nz-col nzMd="16" nzLg="12" class="plr-1 ">
+                <div class="search-products">
+                    <auto-complete-search class="min-w100"></auto-complete-search>
+                </div>
+            </div>
+            <div nz-col nzMd="4" nzLg="6" class="plr-1 text-right">
+                <nz-badge [nzCount]="5">
+                    <button nz-button nzShape="circle" class="btn-36">
+                        <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+                    </button>
+                </nz-badge>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white">
+    <div class="app-container">
+        <div class="product-menu-top plr-1" [ngClass]="(menuMode == 'horizontal') ? 'vertical-top-menu' : ''">
+            <ul nz-menu [nzMode]="menuMode">
+                <li nz-menu-item nzSelected>
+                    <i nz-icon nzType="shop" nzTheme="outline"></i>
+                    Super Store
+                </li>
+                <ng-container *ngFor="let menu of menuList">
+                    <li nz-menu-item *ngIf="!menu.subMenu">
+                        <span [innerText]="menu.label"></span>
+                    </li>
+                </ng-container>
+                <li nz-menu-item>
+                    <a nz-dropdown [nzDropdownMenu]="topMoreMenuItems">
+                        More
+                        <i nz-icon nzType="down"></i>
+                    </a>
+                    <nz-dropdown-menu #topMoreMenuItems="nzDropdownMenu">
+                        <ul nz-menu>
+                            <ng-container>
+                                <li nz-menu-item>Beverages</li>
+                                <li nz-menu-divider></li>
+                                <li nz-menu-item>Breakfast & Dairy</li>
+                                <li nz-menu-divider></li>
+                                <li nz-menu-item>Biscuits, Snacks & Chocolates</li>
+                            </ng-container>
+                        </ul>
+                    </nz-dropdown-menu>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
