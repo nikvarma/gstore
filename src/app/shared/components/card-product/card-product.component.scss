@@ -15,18 +15,6 @@
         transform: scale(1);
         transition-duration: 0.4s;
       }
-      & .badge {
-        left: 0px;
-        top: 10px;
-        z-index: 1;
-        font-size: 12px;
-        font-weight: 500;
-        color: #4eda92;
-        padding: 4px 10px;
-        position: absolute;
-        border-radius: 2px;
-        background: #f2fef2 none repeat scroll 0 0;
-      }
     }
     & .product-card-content {
       & h5 {
@@ -43,9 +31,6 @@
           font-size: inherit;
         }
       }
-    }
-    & .tag-color {
-      color: #ff253a;
     }
     & .product-card-footer {
       & .btn {

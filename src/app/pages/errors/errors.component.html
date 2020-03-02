@@ -1,1 +1,23 @@
-<p>errors works!</p>
+<nz-result nzStatus="404" *ngIf="statusCode === 404" [nzTitle]="title" [nzSubTitle]="subTitle">
+    <div nz-result-extra>
+        <a nz-button [routerLink]='navigateURL'>Back Home</a>
+    </div>
+</nz-result>
+
+<nz-result nzStatus="500" *ngIf="statusCode === 500" [nzTitle]="title" [nzSubTitle]="subTitle">
+    <div nz-result-extra>
+        <button nz-button (click)="navigateToPage()">Back Home</button>
+    </div>
+</nz-result>
+
+<nz-result nzStatus="412" *ngIf="statusCode === 412" [nzTitle]="title" [nzSubTitle]="subTitle">
+    <div nz-result-extra>
+        <button nz-button (click)="navigateToPage()">Back Home</button>
+    </div>
+</nz-result>
+
+<nz-result nzStatus="403" *ngIf="statusCode === 403" [nzTitle]="title" [nzSubTitle]="subTitle">
+    <div nz-result-extra>
+        <button nz-button (click)="navigateToPage()">Back Home</button>
+    </div>
+</nz-result>

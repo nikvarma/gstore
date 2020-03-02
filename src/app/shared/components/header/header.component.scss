@@ -8,6 +8,12 @@
   & li.ant-menu-item {
     margin-right: 5px;
     padding: 10px 15px;
+    & a, &.ant-menu-item-selected {
+      color: inherit;
+      &:hover {
+        color: #e91e63;
+      }
+    }
     &.ant-menu-item-selected,
     &:hover {
       color: #e91e63;

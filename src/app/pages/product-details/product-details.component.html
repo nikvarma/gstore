@@ -1,1 +1,59 @@
-<p>product-details works!</p>
+<div class="pb-2 pt-2 bg-light shadow-b-10 product-detail-page">
+    <div class="app-container">
+        <div nz-row>
+            <div class="plr-1 product-list" nz-col nzMd="12" nzLg="12">
+                <bigimg-slider class="bg-white" [sliderList]="sliderList"></bigimg-slider>
+            </div>
+            <div class="plr-1 product-list" nz-col nzMd="12" nzLg="12">
+                <div class="detail-right bg-white">
+                    <span class="badge product-badge badge-success">50% OFF</span>
+                    <h2 class="product-title font-24">SaveMore Corn Flakes (Pouch)</h2>
+                    <h6 class="mb-1">
+                        <strong>
+                            <span class="tag-color">
+                                <i nz-icon nzType="check-circle" nzTheme="fill"></i>
+                            </span>
+                            <span class="p-5">Available in</span>
+                        </strong>
+                        - 500 gm
+                    </h6>
+                    <p class="regular-price tertiary-text line-through font-16">
+                        <i nz-icon nzType="tags" class="m-5" nzTheme="outline"></i>
+                        MRP : $800.99
+                    </p>
+                    <p class="offer-price font-20 font-b300">
+                        Discounted price :
+                        <span class="secondary-text font-30">$450.99</span>
+                    </p>
+                    <button class="btn shopping-cart btn-secondary mtb-2" nz-button nzSize="large">
+                        <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+                        <span>Add To Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div nz-row class="mtb-2">
+            <div class="plr-1 product-list" nz-col nzMd="24" nzLg="24">
+                <div class="short-description">
+                    <h5 class="short-desc-title">
+                        Quick Overview
+                        <p class="font-b500">
+                            Availability:
+                            <span class="badge product-badge badge-success">In Stock</span>
+                        </p>
+                    </h5>
+                    <p>
+                        <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b>
+                        Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.
+                    </p>
+                    <p>
+                        Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class
+                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hiMenaeos.
+                        Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna
+                        pretium eros convallis interdum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

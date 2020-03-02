@@ -2,6 +2,7 @@ export interface MenuList {
     label: string;
     text: string;
     id: string;
+    url?: string;
     subMenu?: Array<SubMenuList>
 }
 

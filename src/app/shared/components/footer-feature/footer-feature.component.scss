@@ -1,0 +1,29 @@
+.footer-feature-box {
+  & .image-inline-text {
+      display: flex;
+    & .inline-image {
+      width: 75px;
+      height: 75px;
+      padding: 15px;
+      border-radius: 50%;
+      margin-right: 15px;
+      border: 1px solid #24a3b5;
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    & .image-text {
+      & h6 {
+        margin: 0;
+        color: #24a3b5;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px 0 0;
+      }
+      & p {
+          color: #888;
+      }
+    }
+  }
+}

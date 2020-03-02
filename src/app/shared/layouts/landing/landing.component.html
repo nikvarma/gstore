@@ -1,10 +1,12 @@
 <nz-layout class="layout">
-    <nz-sider nzCollapsible class="menu-left-side hide-md" [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzCollapsedWidth]="0"
-        [nzZeroTrigger]="zeroTrigger">
+    <nz-sider nzCollapsible class="menu-left-side hide-md" [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'"
+        [nzCollapsedWidth]="0" [nzZeroTrigger]="zeroTrigger">
     </nz-sider>
     <nz-layout>
         <nz-header class="ant-top-header">
-            <app-header></app-header>
+            <nz-affix>
+                <app-header class="block-bborder"></app-header>
+            </nz-affix>
         </nz-header>
         <nz-content class="ant-render-content">
             <router-outlet></router-outlet>

@@ -109,6 +109,7 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
       vegStatus: VegStatus.Veg.toString(),
@@ -123,9 +124,10 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
-      vegStatus: VegStatus.Veg.toString(),
+      vegStatus: VegStatus.NonVeg.toString(),
       thumbnail: "assets/product-images/1.jpg",
       weightUnit: WeightUnit.Gm.toString().toLocaleLowerCase()
     });
@@ -137,9 +139,10 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
-      vegStatus: VegStatus.Veg.toString(),
+      vegStatus: VegStatus.VegNonVeg.toString(),
       thumbnail: "assets/product-images/1.jpg",
       weightUnit: WeightUnit.Gm.toString().toLocaleLowerCase()
     });
@@ -151,6 +154,7 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
       vegStatus: VegStatus.Veg.toString(),
@@ -165,6 +169,7 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
       vegStatus: VegStatus.Veg.toString(),
@@ -179,9 +184,10 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
-      vegStatus: VegStatus.Veg.toString(),
+      vegStatus: VegStatus.NonVeg.toString(),
       thumbnail: "assets/product-images/1.jpg",
       weightUnit: WeightUnit.Gm.toString().toLocaleLowerCase()
     });
@@ -193,6 +199,7 @@ export class HomeComponent implements OnInit {
       images: [],
       weight: 500,
       productSrc: "Site Record",
+      subCategory: 'fresh-fruits',
       title: "Product Title Here",
       subTitle: "Product Sub Title Here",
       vegStatus: VegStatus.Veg.toString(),

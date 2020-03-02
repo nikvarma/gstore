@@ -8,15 +8,16 @@ export interface ProductList {
     vegStatus: string;
     productSrc: string;
     weightUnit: string;
-    actualPrice: number;    
+    subCategory: string;
+    actualPrice: number;
     currencyType: string;
     discountInPer: number;
 }
 
 export enum VegStatus {
-    Veg,
-    NonVeg,
-    VegNonVeg
+    Veg = 'veg',
+    NonVeg = 'non-veg',
+    VegNonVeg = 'veg-nonveg'
 }
 
 export enum WeightUnit {

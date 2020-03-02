@@ -1,1 +1,34 @@
-<p>mycart works!</p>
+<div class="cart-container">
+    <div class="cart-content bg-light">
+        <added-cart-list [cartList]="myCartList"></added-cart-list>
+    </div>
+
+    <nz-affix>
+        <div class="cart-footer bg-white">
+            <p class="flex-space mb-3">
+                Sub Total
+                <strong>$900.69</strong>
+            </p>
+            <p class="flex-space mb-3">
+                Delivery Charges
+                <strong>$900.69</strong>
+            </p>
+            <h6 class="flex-space font-16 mb-2 text-light-drak">
+                Your total savings
+                <strong>$55 (42.31%)</strong>
+            </h6>
+            <div class="clear-all mt-1">
+                <button nz-button class="btn btn-secondary p-1 checkout-btn" (click)="checkout()">
+                    <span class="pull-left">
+                        <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+                        Proceed to Checkout
+                    </span>
+                    <span class="pull-right">
+                        <strong>$1200.69</strong>
+                        <i nz-icon nzType="double-right" nzTheme="outline"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nz-affix>
+</div>

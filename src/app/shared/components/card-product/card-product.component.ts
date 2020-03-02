@@ -10,7 +10,7 @@ import { ProductList } from 'src/app/models';
 export class CardProductComponent implements OnInit {
   isAddedInCart: boolean;
   sameItemInCartCount: number = 0;
-  @Input() private productDetail: ProductList;
+  @Input() productDetail: ProductList;
   constructor() { }
 
   ngOnInit() {

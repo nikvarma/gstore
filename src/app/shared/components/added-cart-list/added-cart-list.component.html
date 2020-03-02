@@ -1,0 +1,32 @@
+<ng-container *ngFor="let item of cartList;">
+    <div class="bg-white clear-all">
+        <div class="cart-item">
+            <div class="cart-image">
+                <img class="sm-img" [src]="item.thumbnail">
+            </div>
+            <span [class.veg-tick]="item.vegStatus === 'veg'"
+                [class.non-veg-tick]="item.vegStatus === 'non-veg'"
+                [class.veg-nonveg-tick]="item.vegStatus === 'veg-nonveg'" class="veg-status"></span>
+            <span class="badge product-badge badge-success" [innerText]="item.discountInPer + '% OFF'"></span>
+            <h5 class="cart-title font-b500 font-14 secondary-text" [innerText]="item.title"></h5>
+            <h6 class="font-12">
+                <strong>
+                    <span class="tag-color font-10">
+                        <i nz-icon nzType="check-circle" nzTheme="fill"></i>
+                    </span>
+                    Available in
+                </strong>
+                -
+                <span class="font-12 font-b500" [innerText]="item.weight + ' ' + item.weightUnit"></span>
+            </h6>
+            <p class="offer-price">
+                <span class="discount-price font-14 font-b500 text-drak" [innerText]="(item.discountInPer / 100) * item.actualPrice"></span>
+                <i nz-icon nzType="tags" class="m-5 text-drak font-14" nzTheme="outline"></i>
+                <span class="regular-price font-12 line-through" [innerText]="item.actualPrice"></span>
+            </p>
+            <span class="btn remove-item close-btn remove-right">
+                <i nz-icon nzType="close-circle" nzTheme="outline"></i>
+            </span>
+        </div>
+    </div>
+</ng-container>

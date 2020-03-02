@@ -25,11 +25,13 @@ export const StoreRoutes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'products/:category/:id', component: ProductsComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'products/:category', component: ProductsComponent },
       { path: 'delivery-slot', component: SelectDeliverySlotComponent },
       { path: 'terms-and-conditions', component: TermsConditionsComponent },
-      { path: 'product/:category/:id/', component: ProductDetailsComponent },
+      { path: 'products/:category/:subcategory', component: ProductsComponent },
+      { path: 'products/:category/detail/:id', component: ProductDetailsComponent },
+      { path: 'products/:category/:subcategory/:id', component: ProductDetailsComponent },
       { path: '**', component: ErrorsComponent }
     ]
   }

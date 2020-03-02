@@ -1,0 +1,6 @@
+.bigimage-carousel {
+    & .image-box {
+        margin: auto;
+        width: calc(100% - 150px);
+    }
+}

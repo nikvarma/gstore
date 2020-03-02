@@ -1,0 +1,11 @@
+.li-inline-box {
+  & li {
+      width: 50%;
+      display: inline-block;
+  }
+}
+ul {
+  & li {
+    line-height: 25px;
+  }
+}

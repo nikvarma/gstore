@@ -1,26 +1,27 @@
 <div class="card-container text-center bg-white">
     <div class="card-detail">
         <div class="product-card-header">
-            <span class="badge badge-success" [innerText]="productDetail.discountInPer + '% OFF'"></span>
+            <span class="badge product-badge badge-success" [innerText]="productDetail.discountInPer + '% OFF'"></span>
             <img [src]="productDetail.thumbnail" />
-            <span class="veg-status"></span>
+            <span [class.veg-tick]="productDetail.vegStatus === 'veg'"
+                [class.non-veg-tick]="productDetail.vegStatus === 'non-veg'"
+                [class.veg-nonveg-tick]="productDetail.vegStatus === 'veg-nonveg'" class="veg-status"></span>
         </div>
         <div class="product-card-content">
             <h5 [innerText]="productDetail.title"></h5>
             <h6>
                 <strong>
                     <span class="tag-color p-5">
-                        <i nz-icon nzType="check-circle" nzTheme="outline"></i>
+                        <i nz-icon nzType="check-circle" nzTheme="fill"></i>
                     </span>
-                    <span [innerText]="productDetail.subTitle"></span>
+                    <span class="sub-title" [innerText]="productDetail.subTitle"></span>
                 </strong>
                 <span class="font-w400" [innerText]="'-' + productDetail.weight + productDetail.weightUnit"></span>
             </h6>
         </div>
         <div class="product-card-footer">
             <p class="offer-price">
-                <span class="discount-price"
-                    [innerText]="(productDetail.discountInPer / 100) * productDetail.actualPrice"></span>
+                <span class="discount-price" [innerText]="(productDetail.discountInPer / 100) * productDetail.actualPrice"></span>
                 <i nz-icon nzType="tags" class="m-5" nzTheme="outline"></i>
                 <span class="regular-price" [innerText]="productDetail.actualPrice"></span>
             </p>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgZorroAntdModule, NZ_I18N, en_US, NzCarouselModule, NzCardModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NZ_I18N, en_US, NzCarouselModule, NzCardModule, NzResultModule } from 'ng-zorro-antd';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { IconDefinition } from '@ant-design/icons-angular';
@@ -10,6 +10,15 @@ import {
   AccountBookFill, AlertFill, AlertOutline, VideoCameraFill, UploadOutline, UserOutline,
   LockFill, MenuFoldOutline } from '@ant-design/icons-angular/icons';
 import { SideNavModule } from 'carbon-components-angular';
+import { NzAffixModule } from 'ng-zorro-antd/affix';
+import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, VideoCameraFill, UploadOutline, UserOutline,
   LockFill, MenuFoldOutline
@@ -23,21 +32,41 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzGridModule,
     NzCardModule,
     NzIconModule,
+    NzListModule,    
     SideNavModule,
     NzLayoutModule,
+    NzResultModule,
     NzButtonModule,
+    NzAffixModule,
+    NzModalModule,
+    NzDividerModule,
+    NzBackTopModule,
+    NzCollapseModule,
+    NzCheckboxModule,
     NzCarouselModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    NzPaginationModule,
+    NzDescriptionsModule
   ],
   exports: [
     NzCardModule,
     NzGridModule,
     NzIconModule,
+    NzListModule,
     SideNavModule,
     NzLayoutModule,
+    NzResultModule,
     NzButtonModule,
+    NzAffixModule,
+    NzModalModule,
+    NzDividerModule,
+    NzBackTopModule,
+    NzCollapseModule,
+    NzCheckboxModule,
     NzCarouselModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    NzPaginationModule,
+    NzDescriptionsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

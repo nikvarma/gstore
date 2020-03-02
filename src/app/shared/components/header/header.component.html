@@ -46,7 +46,7 @@
             </div>
             <div nz-col nzMd="4" nzLg="6" class="plr-1 text-right">
                 <nz-badge [nzCount]="5">
-                    <button nz-button nzShape="circle" class="btn-36">
+                    <button nz-button nzShape="circle" class="btn-36" (click)="openCart(true)">
                         <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
                     </button>
                 </nz-badge>
@@ -59,13 +59,15 @@
     <div class="app-container">
         <div class="product-menu-top plr-1" [ngClass]="(menuMode == 'horizontal') ? 'vertical-top-menu' : ''">
             <ul nz-menu [nzMode]="menuMode">
-                <li nz-menu-item nzSelected>
-                    <i nz-icon nzType="shop" nzTheme="outline"></i>
-                    Super Store
+                <li nz-menu-item nzSelected [nzMatchRouter]="onLoadMatchMenuToUrl">
+                    <a class="font-b500" [routerLink]="['./', 'home']">
+                        <i nz-icon nzType="shop" nzTheme="outline"></i>
+                        Super Store
+                    </a>
                 </li>
                 <ng-container *ngFor="let menu of menuList">
-                    <li nz-menu-item *ngIf="!menu.subMenu">
-                        <span [innerText]="menu.label"></span>
+                    <li nz-menu-item [nzMatchRouter]="onLoadMatchMenuToUrl" *ngIf="!menu.subMenu">
+                        <a [routerLink]="['./', 'products', menu.url]" [innerText]="menu.label"></a>
                     </li>
                 </ng-container>
                 <li nz-menu-item>
@@ -89,3 +91,21 @@
         </div>
     </div>
 </div>
+<nz-drawer [nzVisible]="showMyCart" [nzTitle]="cartHeader" (nzOnClose)="openCart(false)" nzClosable="true"
+    [nzBodyStyle]="{ height: 'calc(100% - 150px)', overflow: 'auto', 'padding-bottom': '55px' }"
+    nzWrapClassName="cart-drawer">
+    <app-mycart></app-mycart>
+</nz-drawer>
+<nz-modal [(nzVisible)]="authModalIsVisible" nzTitle="modalTitle" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+    [nzOkLoading]="isOkLoading">
+</nz-modal>
+<ng-template #cartHeader>
+    <div class="cart-header">
+        <h5>
+            My Cart
+            <span class="cart-total tertiary-text">
+                (<span class="cart-total-items" [innerText]="totalCartItemsText"></span>)
+            </span>
+        </h5>
+    </div>
+</ng-template>

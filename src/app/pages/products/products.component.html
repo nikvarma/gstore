@@ -1,1 +1,52 @@
-<p>products works!</p>
+<div #productTopControls class="product-page">
+    <nz-affix [nzTarget]="productTopControls" id="product-top-controls-target">
+        <div class="bg-white shadow-b-10">
+            <div class="app-container">
+                <div nz-row>
+                    <div class="plr-1 product-top-controls flex-content">
+                        <div class="product-pagination text-right mlr-2" nz-col nzMd="5" nzLg="5">
+                        </div>
+                        <div class="flex-spacer"></div>
+                        <div class="product-pagination text-right mlr-2" nz-col nzMd="9" nzLg="9">
+                            <nz-pagination [nzPageIndex]="3" [nzTotal]="50" nzShowSizeChanger [nzPageSize]="10">
+                            </nz-pagination>
+                        </div>
+                        <div class="product-sort mlr-2" nz-col nzMd="4" nzLg="4">
+                            <nz-select class="min-w100" nzPlaceHolder="Sort by Products">
+                                <nz-option nzLabel="Relevance"></nz-option>
+                                <nz-option nzLabel="Price (Low to High)"></nz-option>
+                                <nz-option nzLabel="Price (High to Low)"></nz-option>
+                                <nz-option nzLabel="Discount (High to Low)"></nz-option>
+                                <nz-option nzLabel="Name (A to Z)"></nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nz-affix>
+</div>
+<div class="pb-2 pt-2 bg-light shadow-b-10 product-page">
+    <div class="app-container">
+        <div nz-row>
+            <div class="plr-1" nz-col nzMd="5" nzLg="5" #productTarget>
+                <!-- <nz-affix [nzTarget]="productTarget" id="product-target"> -->
+                <app-filter class="block-content shadow-b-10"></app-filter>
+                <!-- </nz-affix> -->
+            </div>
+            <div class="plr-1 product-list" nz-col nzMd="19" nzLg="19">
+                <div nz-row>
+                    <ng-template ngFor let-product [ngForOf]="productList">
+                        <div nz-col nzXs="12" nzSm="12" nzMd="6" nzLg="6">
+                            <a [routerLink]="['./', 'detail', product.id]">
+                                <app-card-product (click)="showProductDetail(product)"
+                                    class="btn product-item inline-slide" [productDetail]="product">
+                                </app-card-product>
+                            </a>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

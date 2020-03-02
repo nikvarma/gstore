@@ -9,36 +9,59 @@ import { MenuList } from "src/app/models/menu-list";
 })
 export class HeaderComponent implements OnInit {
   currLocation: string;
+  showMyCart: boolean;
+  modalTitle: string;
+  totalCartItems: number = 0;
+  totalCartItemsText: string;
+  authModalIsVisible: boolean;
+  isOkLoading: boolean = false;
   menuMode: string = "horizontal";
+  onLoadMatchMenuToUrl: boolean = true;
   menuList: Array<MenuList> = new Array<MenuList>();
-  constructor() {}
+  menuMoreList: Array<MenuList> = new Array<MenuList>();
+  constructor() {
+    this.showMyCart = true;
+  }
 
-  ngOnInit() {
+  openCart(openCart: boolean): void {
+    this.showMyCart = openCart;
+  }
+
+  handleOk() {
+
+  }
+
+  ngOnInit() {    
     this.currLocation = "New York";
     this.menuList.push({
+      id: "1",
+      url: "grocery-and-staples",
       label: "Grocery & Staples",
-      text: "Grocery & Staples",
-      id: ""
+      text: "Grocery & Staples"
     });
     this.menuList.push({
+      id: "2",
+      url: "vegetables-and-fruits",
       label: "Vegetables & Fruits",
-      text: "Vegetables & Fruits",
-      id: ""
+      text: "Vegetables & Fruits"
     });
     this.menuList.push({
+      id: "3",
+      url: "personal-care",
       label: "Personal Care",
-      text: "Personal Care",
-      id: ""
+      text: "Personal Care"
     });
     this.menuList.push({
+      id: "4",
+      url: "household-items",
       label: "Household Items",
-      text: "Household Items",
-      id: ""
+      text: "Household Items"
     });
     this.menuList.push({
+      id: "5",
+      url: "home-and-kitchen",
       label: "Home & Kitchen",
-      text: "Home & Kitchen",
-      id: ""
+      text: "Home & Kitchen"
     });
     // this.menuList.push({
     //   label: "Biscuits, Snacks & Chocolates",
@@ -90,5 +113,10 @@ export class HeaderComponent implements OnInit {
     //   text: "Fashion",
     //   id: ""
     // });
+    this.totalCartItemsText = (this.totalCartItems > 0) ? `${this.totalCartItems} Items` : `${this.totalCartItems} Item`;
+  }
+
+  handleCancel(): void {
+
   }
 }

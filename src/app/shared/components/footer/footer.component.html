@@ -1,12 +1,105 @@
+<div class="ptb-40">
+    <div class="app-container">
+        <div nz-row>
+            <div nz-col nzMd="6" class="plr-1 mtb-1">
+                <div class="block-content">
+                    <a [routerLink]="['./', 'home']" class="mb-1 text-cap">
+                        <h6 class="light-text">
+                            GroceriStore
+                        </h6>
+                    </a>
+                    <p class="font-12 secondary-text">Supermarket, Super Value</p>
+                </div>
+                <div class="contact-info">
+                    <ul>
+                        <li class="secondary-text">
+                            <i class="mr-4" nz-icon nzType="phone"></i>
+                            <a href="tel:+918889999999">+91 888 9999 999</a>
+                        </li>
+                        <li class="secondary-text">
+                            <i class="mr-4" nz-icon nzType="audit" nzTheme="outline"></i>
+                            <a href="mailto:sales@groceristore.com">sales@groceristore.com</a>
+                        </li>
+                        <li class="secondary-text">
+                            <i class="mr-4" nz-icon nzType="contacts"></i>
+                            <a href="mailto:contact@groceristore.com">contact@groceristore.com</a>
+                        </li>
+                        <li class="secondary-text">
+                            <i class="mr-4" nz-icon nzType="global" nzTheme="outline"></i>
+                            <a [routerLink]="['./']">www.groceristore.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div nz-col nzMd="6" class="plr-1 li-inline-box mtb-1">
+                <h6 class="mb-1 text-cap">Categories</h6>
+                <ul>
+                    <li><a [routerLink]="['./', 'products', 'atta-and-rice']">Atta & Rice</a></li>
+                    <li><a [routerLink]="['./', 'products', 'cooking-oil']">Cooking Oil</a></li>
+                    <li><a [routerLink]="['./', 'products', 'baby-diapers']">Baby Diapers</a></li>
+                    <li><a [routerLink]="['./', 'products', 'noodles-and-pasta']">Noodles & Pasta</a></li>
+                    <li><a [routerLink]="['./', 'products', 'grocery-and-staples']">Grocery & Staples</a></li>
+                    <li><a [routerLink]="['./', 'products', 'biscuits-and-cookies']">Biscuits & Cookies</a></li>
+                    <li><a [routerLink]="['./', 'products', 'vegetables-and-fruits']">Vegetables & Fruits</a></li>
+                </ul>
+            </div>
+            <div nz-col nzMd="6" class="plr-1 li-inline-box mtb-1">
+                <h6 class="mb-1 text-cap">Useful Links</h6>
+                <ul>
+                    <li><a [routerLink]="['./', 'faq']">FAQ</a></li>
+                    <li><a [routerLink]="['blogs']">Blog</a></li>
+                    <li><a [routerLink]="['./', 'offers']">Offers</a></li>
+                    <li><a [routerLink]="['./', 'about-us']">About Us</a></li>
+                    <li><a [routerLink]="['./', 'contact-us']">Contact Us</a></li>
+                    <li><a [routerLink]="['./', 'store-recipe']">Store Recipe</a></li>
+                    <li><a [routerLink]="['./', 'Privacy Policy']">Privacy Policy</a></li>
+                    <li><a [routerLink]="['./', 'Terms & Conditions']">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div nz-col nzMd="6" class="plr-1 mtb-1">
+                <h6>Payment</h6>
+                <ul>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="paytm" src="assets/store/paytm-100.png">
+                    </li>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="apple pay" src="assets/store/apple-pay-100.png">
+                    </li>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="google wallet" src="assets/store/google-wallet-100.png">
+                    </li>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="paypal" src="assets/store/paypal-100.png">
+                    </li>
+
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="cash on delivery" src="assets/store/cash-in-hand-100.png">
+                    </li>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="wallet" src="assets/store/wallet-100.png">
+                    </li>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="mastercard" src="assets/store/mastercard-100.png">
+                    </li>
+                    <li class="w-per-15 inline-block-content m-5">
+                        <img class="sm-img" alt="visa" src="assets/store/visa-100.png">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="pb-2 pt-2">
     <div class="app-container">
         <div nz-row>
             <div nz-col nzMd="24" class="plr-1">
-                <a [routerLink]="home">
+                <a [routerLink]="['./', 'home']">
                     <span>
-                        <i nz-icon nzType="shopping" nzTheme="outline"></i>
+                        &copy; Copyright 2020.
+                        <i class="mlr-2" nz-icon nzType="shopping" nzTheme="outline"></i>
+                        <strong>GroceriStore</strong>
+                        All Rights Reserved
                     </span>
-                    <span>GroceriStore</span>
                 </a>
             </div>
         </div>

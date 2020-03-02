@@ -1,4 +1,4 @@
-<div class="pt-2 bg-white">
+<div class="bg-white">
     <app-carousel class="home-top-carousel" [playSpeed]="8000" [imageList]="imageBannerList"></app-carousel>
 </div>
 <div nz-menu-divider></div>
@@ -23,10 +23,39 @@
         </div>
         <div class="inline-slider">
             <card-inline-slider [showSlideIcon]="true" [enableLoopSlide]="true">
-                <ng-container *ngFor="let product of productList;">
+                <ng-template ngFor let-product [ngForOf]="productList">
                     <app-card-product class="btn inline-slide" [productDetail]="product"></app-card-product>
-                </ng-container>
+                </ng-template>
             </card-inline-slider>
         </div>
     </div>
+</div>
+<div class="bg-light">
+    <div class="app-container">
+        <div class="block-content">
+            <img src="assets/1.jpg" class="img" alt="Groceries Store offer" />
+            <img src="assets/2.jpg" class="img" alt="Groceries Store offer" />
+        </div>
+    </div>
+</div>
+<div class="ptb-40 bg-light">
+    <div class="app-container">
+        <div class="container-header">
+            <h5 class="heading-5">Best Offers View
+                <span class="tag-label badge-success text-white bg-tertiary badge">20% OFF</span>
+                <button class="btn btn-view-all secondary-text set-right">View All</button>
+            </h5>
+            <div class="clear-all"></div>
+        </div>
+        <div class="inline-slider">
+            <card-inline-slider [showSlideIcon]="true" [enableLoopSlide]="true">
+                <ng-template ngFor let-product [ngForOf]="productList">
+                    <app-card-product class="btn inline-slide" [productDetail]="product"></app-card-product>
+                </ng-template>
+            </card-inline-slider>
+        </div>
+    </div>
+</div>
+<div class="ptb-40 bg-white">
+    <app-footer-feature class="app-container block-content"></app-footer-feature>
 </div>

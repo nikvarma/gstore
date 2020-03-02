@@ -24,6 +24,14 @@ import { CardProductComponent } from './card-product/card-product.component';
 import { CardInlineSliderComponent } from './card-inline-slider/card-inline-slider.component';
 import { MutiselectGroupDropdownComponent } from './mutiselect-group-dropdown/mutiselect-group-dropdown.component';
 import { CardSliderDirective } from '../directive/card-slider.directive';
+import { CartToggleButtonComponent } from './cart-toggle-button/cart-toggle-button.component';
+import { FooterFeatureComponent } from './footer-feature/footer-feature.component';
+import { SliderScrollDirective } from '../directive/slider-scroll.directive';
+import { ContentScrollDirective } from '../directive/content-scroll.directive';
+import { SlideCheckoutCartComponent } from './slide-checkout-cart/slide-checkout-cart.component';
+import { AddedCartListComponent } from './added-cart-list/added-cart-list.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { BigimgSliderComponent } from './bigimg-slider/bigimg-slider.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +53,16 @@ import { CardSliderDirective } from '../directive/card-slider.directive';
     AutoCompleteComponent,
     OrderTrackingComponent,
     CardProductComponent,
+    SliderScrollDirective,
+    ContentScrollDirective,
+    FooterFeatureComponent,
     CardInlineSliderComponent,
-    MutiselectGroupDropdownComponent
+    CartToggleButtonComponent,
+    MutiselectGroupDropdownComponent,
+    SlideCheckoutCartComponent,
+    AddedCartListComponent,
+    ShoppingCartComponent,
+    BigimgSliderComponent
   ],
   imports: [
     FormsModule,
@@ -56,6 +72,7 @@ import { CardSliderDirective } from '../directive/card-slider.directive';
     CarbonComponentModule,
   ],
   exports: [
+    FilterComponent,
     HeaderComponent,
     FooterComponent,
     CarouselComponent,
@@ -64,6 +81,12 @@ import { CardSliderDirective } from '../directive/card-slider.directive';
     CardSliderDirective,
     CardProductComponent,
     AutoCompleteComponent,
+    FooterFeatureComponent,
+    BigimgSliderComponent,
+    SliderScrollDirective,
+    ContentScrollDirective,
+    CardInlineSliderComponent,
+    CartToggleButtonComponent,
     CardInlineSliderComponent
   ]
 })

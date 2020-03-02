@@ -1,0 +1,11 @@
+<nz-carousel [nzDotPosition]="dotPosition" [nzAutoPlay]="autoPlay" (nzAfterChange)="afterSlideChange($event)"
+    (nzBeforeChange)="beforeSlideChange($event)" [nzAutoPlaySpeed]="autoPlaySpeed">
+    <ng-template ngFor let-item [ngForOf]="sliderList">
+        <div nz-carousel-content class="bigimage-carousel">
+            <h3 *ngIf="item.title" [innerText]="item.title"></h3>
+            <div class="image-box">
+                <img [src]="item.imagePath" class="m-auto sm-img" />
+            </div>
+        </div>
+    </ng-template>
+</nz-carousel>

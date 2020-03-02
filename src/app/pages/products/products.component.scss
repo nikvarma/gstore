@@ -1,0 +1,16 @@
+.product-page {
+  position: relative;
+  & .product-top-controls {
+      padding: 5px .5rem;
+  }
+  & .product-list {
+    & .product-item {
+      min-width: 212px;
+      & h6 {
+        & .sub-title {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,14 @@
 <div class="left-arrow" *ngIf="showSlideIcon">
-    <button class="btn btn-icon" (click)="onSlideChange('pervious')">
+    <button class="btn btn-icon" [class.disable]="disabledPrevious" (click)="onSlideChange('previous')" [disabled]="disabledPrevious">
         <i nz-icon nzType="left-circle" nzTheme="outline"></i>
     </button>
 </div>
-<div class="inline-slider-box" appCardSlider>
-    <ng-content #inlineSliderContent id="inlineSliderContent"></ng-content>
+<div class="inline-slider-box" appCardSlider [arrowMove]="arrowMove" [arrowSelectedIndex]="currentSelectedIndex" (onSildeIndexChange)="onSildeIndexChange($event)"
+    (initSliderConfig)="sliderInit($event)">
+    <ng-content></ng-content>
 </div>
 <div class="right-arrow" *ngIf="showSlideIcon">
-    <button class="btn btn-icon" (click)="onSlideChange('next')">
+    <button class="btn btn-icon" [class.disable]="disabledNext" (click)="onSlideChange('next')" [disabled]="disabledNext">
         <i nz-icon nzType="right-circle" nzTheme="outline"></i>
     </button>
 </div>
