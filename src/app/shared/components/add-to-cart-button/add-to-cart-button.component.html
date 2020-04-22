@@ -1,0 +1,10 @@
+<div [class.hide]="!isAddedInCart" class="product-add-btn">
+    <button class="btn btn-icon" (click)="addSameItem()">
+        <i nz-icon nzType="plus" nzTheme="outline"></i>
+    </button>
+    <input type="text" name="sameItemInCartCount" [(ngModel)]="sameItemInCartCount"
+        id="sameItemInCartCount" />
+    <button class="btn btn-icon" (click)="removeSameItem()">
+        <i nz-icon nzType="minus" nzTheme="outline"></i>
+    </button>
+</div>

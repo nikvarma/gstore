@@ -1,0 +1,1 @@
+export { PageCheckout } from './page-checkout';

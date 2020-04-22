@@ -1,0 +1,15 @@
+.user-dashboard {
+  & .user-profile-list {
+    & .user-profile {
+      & .user-image {
+        padding: 15px;
+        text-align: center;
+        & nz-avatar {
+          padding: 10px;
+          border: 2px solid #eeeeee;
+        }
+      }
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+}
