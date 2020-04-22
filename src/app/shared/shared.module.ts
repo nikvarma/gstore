@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LandingComponent } from './layouts';
 import { ComponentsModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
+import { UserLandingComponent } from './layouts/user-landing/user-landing.component';
 
 @NgModule({
   declarations: [
-    LandingComponent
+    LandingComponent,
+    UserLandingComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { RouterModule } from '@angular/router';
   ], exports: [
     RouterModule,
     LandingComponent,
-    ComponentsModule
+    ComponentsModule,
+    UserLandingComponent
   ]
 })
 export class SharedModule { }

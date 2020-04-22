@@ -1,1 +1,217 @@
-<p>checkout works!</p>
+<div class="pb-2 pt-2 checkout-page">
+    <div class="app-container">
+        <div nz-row>
+            <div nz-col nzMd="15" nzLg="15" class="header-top-bar mtb-1 plr-1">
+                <nz-collapse nzAccordion class="ptb-1 bg-white checkout-u--detail shadow-b-10">
+                    <nz-collapse-panel [nzExpandedIcon]="expandedIcon1" class="font-b500"
+                        nzHeader="Phone Number Verification">
+                        <p class="mb-1 font-b400">
+                            We need your phone number so that we can update you about your order.
+                        </p>
+                        <nz-input-group class="w-auto mr-4 input-box-h" [nzPrefix]="prefixTemplatePhoneNum">
+                            <input type="text" nz-input placeholder="Enter phone number" nzSize="large" />
+                        </nz-input-group>
+                        <button class="btn btn-secondary input-box-h" nz-button nzSize="large">
+                            <span class="text-white font-14">Next</span>
+                        </button>
+                        <ng-template #prefixTemplatePhoneNum>
+                            <i nz-icon nzType="mobile" nzTheme="outline"></i>
+                        </ng-template>
+                        <ng-template #expandedIcon1>
+                            <span class="steps-round-number font-medium">1</span>
+                        </ng-template>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader="Delivery Address" [nzExpandedIcon]="expandedIcon2" class="font-b500">
+                        <div class="checkout-form" nz-form nzLayout="vertical">
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>First Name</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>Last Name</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>Phone</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>Email Address</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>Country</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>City</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>Zip Code</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+
+                                <div nz-col [nzSpan]="12">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>State</nz-form-label>
+                                        <nz-form-control>
+                                            <input nzSize="medium" nz-input placeholder="placeholder" />
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="24">
+                                    <nz-form-item>
+                                        <nz-form-label nzRequired>Shipping Address</nz-form-label>
+                                        <nz-form-control nzValidatingTip="Please provide the number and street.">
+                                            <textarea nzSize="medium" nz-input placeholder="placeholder"></textarea>
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="24">
+                                    <nz-form-item>
+                                        <nz-form-control>
+                                            <label nz-checkbox>
+                                                <span class="font-b400">Use my delivery address as my billing
+                                                    address</span>
+                                            </label>
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                </div>
+                            </div>
+                            <div nz-row [nzGutter]="24">
+                                <div nz-col [nzSpan]="24">
+                                    <button class="btn btn-secondary input-box-h" nz-button nzSize="large">
+                                        <span class="text-white font-14">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #expandedIcon2>
+                            <span class="steps-round-number font-medium">2</span>
+                        </ng-template>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader="Delivery Slot" [nzExpandedIcon]="expandedIcon3" class="font-b500">
+                        <ng-template #expandedIcon3>
+                            <span class="steps-round-number font-medium">3</span>
+                        </ng-template>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader="Payment" [nzExpandedIcon]="expandedIcon4" class="font-b500">
+                        <div nz-row [nzGutter]="24">
+                            <div nz-col [nzSpan]="24">
+                                <nz-radio-group>
+                                    <label nz-radio-button nzValue="paytm">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/paytm-100.png"></nz-avatar>
+                                        Paytm
+                                    </label>
+                                    <label nz-radio-button nzValue="apple-pay">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/apple-pay-100.png"></nz-avatar>
+                                        Apple Pay
+                                    </label>
+                                    <label nz-radio-button nzValue="google-wallet">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/google-wallet-100.png"></nz-avatar>
+                                        Google Wallet
+                                    </label>
+                                    <label nz-radio-button nzValue="paypal">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/paypal-100.png"></nz-avatar>
+                                        PayPal
+                                    </label>
+                                    <label nz-radio-button nzValue="cash-in-hand">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/cash-in-hand-100.png"></nz-avatar>
+                                        Cash on Delivery
+                                    </label>
+                                    <label nz-radio-button nzValue="A">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/wallet-100.png"></nz-avatar>
+                                        Wallet
+                                    </label>
+                                    <label nz-radio-button nzValue="mastercard">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35"
+                                            nzSrc="assets/store/mastercard-100.png"></nz-avatar>
+                                        Master Card
+                                    </label>
+                                    <label nz-radio-button nzValue="visacard">
+                                        <nz-avatar [nzShape]="'square'" [nzSize]="35" nzSrc="assets/store/visa-100.png">
+                                        </nz-avatar>
+                                        Visa Card
+                                    </label>
+                                </nz-radio-group>
+                            </div>
+                        </div>
+                        <ng-template #expandedIcon4>
+                            <span class="steps-round-number font-medium">4</span>
+                        </ng-template>
+                    </nz-collapse-panel>
+                    <nz-collapse-panel nzHeader="Order Complete" [nzExpandedIcon]="expandedIcon5" class="font-b500"
+                        nzActive="true">
+                        <nz-result nzStatus="success" nzTitle="Congrats! Your Order has been Accepted.."
+                            nzSubTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait.">
+                            <div nz-result-extra>
+                                <button nz-button class="btn btn-secondary input-box-h">
+                                    <span class="text-white font-14">Return to store</span>
+                                </button>
+                            </div>
+                        </nz-result>
+                        <ng-template #expandedIcon5>
+                            <span class="steps-round-number font-medium">5</span>
+                        </ng-template>
+                    </nz-collapse-panel>
+                </nz-collapse>
+            </div>
+            <div nz-col nzMd="9" nzLg="9" class="header-top-bar plr-1">
+
+            </div>
+        </div>
+    </div>
+</div>

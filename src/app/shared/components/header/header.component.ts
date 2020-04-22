@@ -20,11 +20,11 @@ export class HeaderComponent implements OnInit {
   menuList: Array<MenuList> = new Array<MenuList>();
   menuMoreList: Array<MenuList> = new Array<MenuList>();
   constructor() {
-    this.showMyCart = true;
+    this.showMyCart = false;
   }
 
-  openCart(openCart: boolean): void {
-    this.showMyCart = openCart;
+  openCart(): void {
+    this.showMyCart = !this.showMyCart;
   }
 
   handleOk() {

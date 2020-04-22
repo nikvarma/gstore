@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-landing.component.scss']
 })
 export class UserLandingComponent implements OnInit {
-
+  isCollapsed: boolean;
   constructor() { }
-
+  
   ngOnInit() {
+    this.isCollapsed = false;
   }
 
 }

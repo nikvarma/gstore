@@ -15,7 +15,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/schematics": "^9.0.4",
     "@angular/animations": "~9.0.4",
     "@angular/common": "~9.0.4",
     "@angular/compiler": "~9.0.4",
@@ -37,7 +36,6 @@
     "@ngrx/store-devtools": "^8.6.0",
     "@nguniversal/express-engine": "^9.0.1",
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
-    "@schematics/angular": "^9.0.4",
     "express": "^4.15.2",
     "ng-zorro-antd": "^8.5.2",
     "rxjs": "~6.5.4",

@@ -32,6 +32,7 @@ import { SlideCheckoutCartComponent } from './slide-checkout-cart/slide-checkout
 import { AddedCartListComponent } from './added-cart-list/added-cart-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BigimgSliderComponent } from './bigimg-slider/bigimg-slider.component';
+import { AddToCartButtonComponent } from './add-to-cart-button/add-to-cart-button.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { BigimgSliderComponent } from './bigimg-slider/bigimg-slider.component';
     SlideCheckoutCartComponent,
     AddedCartListComponent,
     ShoppingCartComponent,
-    BigimgSliderComponent
+    BigimgSliderComponent,
+    AddToCartButtonComponent
   ],
   imports: [
     FormsModule,
@@ -85,6 +87,7 @@ import { BigimgSliderComponent } from './bigimg-slider/bigimg-slider.component';
     BigimgSliderComponent,
     SliderScrollDirective,
     ContentScrollDirective,
+    AddToCartButtonComponent,
     CardInlineSliderComponent,
     CartToggleButtonComponent,
     CardInlineSliderComponent

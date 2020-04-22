@@ -9,7 +9,6 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import {
   AccountBookFill, AlertFill, AlertOutline, VideoCameraFill, UploadOutline, UserOutline,
   LockFill, MenuFoldOutline } from '@ant-design/icons-angular/icons';
-import { SideNavModule } from 'carbon-components-angular';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
@@ -19,6 +18,8 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 
 const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, VideoCameraFill, UploadOutline, UserOutline,
   LockFill, MenuFoldOutline
@@ -32,8 +33,8 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzGridModule,
     NzCardModule,
     NzIconModule,
-    NzListModule,    
-    SideNavModule,
+    NzListModule,
+    NzFormModule,
     NzLayoutModule,
     NzResultModule,
     NzButtonModule,
@@ -41,6 +42,7 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzModalModule,
     NzDividerModule,
     NzBackTopModule,
+    NzTimelineModule,
     NzCollapseModule,
     NzCheckboxModule,
     NzCarouselModule,
@@ -53,7 +55,7 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzGridModule,
     NzIconModule,
     NzListModule,
-    SideNavModule,
+    NzFormModule,
     NzLayoutModule,
     NzResultModule,
     NzButtonModule,
@@ -61,6 +63,7 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzModalModule,
     NzDividerModule,
     NzBackTopModule,
+    NzTimelineModule,
     NzCollapseModule,
     NzCheckboxModule,
     NzCarouselModule,

@@ -1,1 +1,71 @@
-<p>profile works!</p>
+<div class="user-profile-page">
+    <div class="app-container shadow-b p-1 bg-white">
+        <div nz-row>
+            <div nz-col nzMd="24" nzLg="24">
+                <div class="header-section">
+                    <h5 class="font-18">My Profile</h5>
+                </div>
+                <div class="form-section">
+                    <div nz-row [nzGutter]="24">
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">First Name</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your username!">
+                                <nz-input-group>
+                                    <input type="text" nz-input formControlName="userName" placeholder="first name" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">Last Name</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <input type="password" nz-input formControlName="password" placeholder="last name" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">Mobile Number</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <input type="password" nz-input formControlName="password" placeholder="mobile number" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">Email Address</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <input type="password" nz-input formControlName="password" placeholder="email address" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">City</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <input type="password" nz-input formControlName="password" placeholder="city" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">Pincode</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <input type="password" nz-input placeholder="pincode" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="24" class="textarea-box">
+                            <nz-form-label nzRequired nzFor="name">Full Address</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <textarea nz-input formControlName="password" placeholder="full address"></textarea>
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

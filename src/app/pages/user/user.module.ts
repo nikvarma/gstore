@@ -6,9 +6,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { PaymentModeComponent } from './payment-mode/payment-mode.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { ChatSupportComponent } from './chat-support/chat-support.component';
-import { RouterModule } from '@angular/router';
 import { UserRoutingModule } from './user.router';
-import { UserLandingComponent } from 'src/app/shared/layouts/user-landing/user-landing.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -19,11 +19,20 @@ import { UserLandingComponent } from 'src/app/shared/layouts/user-landing/user-l
     PaymentModeComponent,
     OrderStatusComponent,
     ChatSupportComponent,
-    UserLandingComponent
+    DashboardComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     UserRoutingModule
+  ],exports: [
+    ProfileComponent,
+    OrdersComponent,
+    SettingsComponent,
+    PaymentModeComponent,
+    OrderStatusComponent,
+    ChatSupportComponent,
+    DashboardComponent
   ]
 })
 export class UserModule { }

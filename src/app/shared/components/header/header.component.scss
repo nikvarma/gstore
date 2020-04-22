@@ -1,3 +1,26 @@
+.top-header {
+  & .user-profile {
+    margin: auto 5px;
+    & nz-avatar {
+      margin: auto 5px;
+      border: 2px solid;
+      background-color: white;
+    }
+    & i {
+      margin: auto 5px;
+    }
+    & .username-link {
+      color: white;
+      padding: 0 5px;
+      overflow: hidden;
+      font-weight: 600;
+      max-width: 80px;
+      white-space: nowrap;
+      display: inline-flex;
+      text-overflow: ellipsis;
+    }
+  }
+}
 .search-products {
   display: flex;
 }

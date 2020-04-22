@@ -5,7 +5,6 @@ import { ErrorsComponent } from './pages/errors/errors.component';
 const routes: Routes = [
   { path: '', redirectTo: 'store', pathMatch: 'full' },
   { path: 'store', loadChildren:() => import('./store.module').then(m => m.AppStoreModule) },
-  { path: 'user', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule) },
   { path: 'blogs', loadChildren:() => import('./pages/blogs/blogs.module').then(m => m.BlogsModule) },
   { path: '**', component: ErrorsComponent }
 ];

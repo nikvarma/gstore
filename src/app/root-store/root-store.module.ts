@@ -3,7 +3,7 @@ import { environment } from "../../environments/environment";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { EffectsModule } from "@ngrx/effects";
 import { AppEffects } from "../app.effects";
-import { StoreRouterConnectingModule } from "@ngrx/router-store";
+import { StoreRouterConnectingModule, RouterState } from "@ngrx/router-store";
 import { EntityDataModule } from "@ngrx/data";
 import { entityConfig } from "../entity-metadata";
 import { StoreModule } from "@ngrx/store";
@@ -26,7 +26,7 @@ import { reducers, metaReducers } from "../reducers";
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreRouterConnectingModule.forRoot({ stateKey: "router" })
+    StoreRouterConnectingModule.forRoot({ stateKey: "router", routerState: RouterState.Minimal, })
   ]
 })
 export class RootStoreModule {}

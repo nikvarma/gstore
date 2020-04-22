@@ -1,1 +1,37 @@
-<p>order-status works!</p>
+<div class="order-status-page">
+    <div class="app-container shadow-b p-1 bg-white">
+        <div nz-row>
+            <div nz-col nzMd="24" nzLg="24">
+                <div class="header-section">
+                    <h5 class="font-18">Order Status</h5>
+                </div>
+                <div class="order-timeline">
+                    <nz-timeline nzMode="alternate">
+                        <nz-timeline-item [nzDot]="dotconfirmTemplate">
+                            <span class="font-12 secondary-text">Order Confirmed</span>
+                            <br />
+                            <span class="font-10">2015-09-01</span>
+                        </nz-timeline-item>
+                        <nz-timeline-item [nzDot]="dotclockTemplate">
+                            <span class="font-12">Dispatching Package</span>
+                            <br />
+                            <span class="font-10">2015-09-01</span>
+                        </nz-timeline-item>
+                        <nz-timeline-item [nzDot]="dotclockTemplate">
+                            <span class="font-12">Package Dispatched</span>
+                        </nz-timeline-item>
+                        <nz-timeline-item nzColor="#0cc5b7"> 2015-09-01</nz-timeline-item>
+                        <nz-timeline-item nzColor="#0cc5b7">Create a services site 2015-09-01</nz-timeline-item>
+                        <nz-timeline-item [nzDot]="dotclockTemplate">Technical testing 2015-09-01</nz-timeline-item>
+                    </nz-timeline>
+                    <ng-template #dotclockTemplate>
+                        <i nz-icon nzType="clock-circle-o" class="font-16 text-light-drak"></i>
+                    </ng-template>
+                    <ng-template #dotconfirmTemplate>
+                        <i nz-icon nzType="check-circle" class="font-16 secondary-text" nzTheme="outline"></i>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

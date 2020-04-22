@@ -6,6 +6,11 @@
             <span [class.veg-tick]="productDetail.vegStatus === 'veg'"
                 [class.non-veg-tick]="productDetail.vegStatus === 'non-veg'"
                 [class.veg-nonveg-tick]="productDetail.vegStatus === 'veg-nonveg'" class="veg-status"></span>
+            <div class="offer-price fixed-bottom">
+                <span class="discount-price" [innerText]="(productDetail.discountInPer / 100) * productDetail.actualPrice"></span>
+                <i nz-icon nzType="tags" class="m-5" nzTheme="outline"></i>
+                <span class="regular-price" [innerText]="productDetail.actualPrice"></span>
+            </div>
         </div>
         <div class="product-card-content">
             <h5 [innerText]="productDetail.title"></h5>
@@ -14,28 +19,28 @@
                     <span class="tag-color p-5">
                         <i nz-icon nzType="check-circle" nzTheme="fill"></i>
                     </span>
-                    <span class="sub-title" [innerText]="productDetail.subTitle"></span>
+                    <span class="sub-title font-b500" [innerText]="productDetail.subTitle"></span>
                 </strong>
                 <span class="font-w400" [innerText]="'-' + productDetail.weight + productDetail.weightUnit"></span>
             </h6>
         </div>
-        <div class="product-card-footer">
-            <p class="offer-price">
+        <div class="product-card-footer" (click)="stopEventPropagation($event)">
+            <!-- <p class="offer-price">
                 <span class="discount-price" [innerText]="(productDetail.discountInPer / 100) * productDetail.actualPrice"></span>
                 <i nz-icon nzType="tags" class="m-5" nzTheme="outline"></i>
                 <span class="regular-price" [innerText]="productDetail.actualPrice"></span>
-            </p>
+            </p> -->
             <button class="btn btn-secondary" [class.hide]="isAddedInCart" (click)="addToCart($event)">
                 <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
                 Add To Cart
             </button>
             <div [class.hide]="!isAddedInCart" class="product-add-btn">
-                <button class="btn btn-icon" (click)="addSameItem()">
+                <button class="btn btn-icon" (click)="addSameItem($event)">
                     <i nz-icon nzType="plus" nzTheme="outline"></i>
                 </button>
                 <input type="text" name="sameItemInCartCount_{{ productDetail.id }}" [(ngModel)]="sameItemInCartCount"
                     id="sameItemInCartCount_{{ productDetail.id }}" />
-                <button class="btn btn-icon" (click)="removeSameItem()">
+                <button class="btn btn-icon" (click)="removeSameItem($event)">
                     <i nz-icon nzType="minus" nzTheme="outline"></i>
                 </button>
             </div>

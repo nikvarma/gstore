@@ -18,20 +18,33 @@ export class CardProductComponent implements OnInit {
   }
 
   addToCart(event: Event): void {
+    event.preventDefault();
     event.stopPropagation();
-    this.addSameItem();
+    this.addSameItem(event);
     this.isAddedInCart = true;
   }
 
-  addSameItem(): void {
+  addSameItem(event: Event): void {
+    if (event) {
+      this.stopEventPropagation(event);
+    }
     this.sameItemInCartCount++;
   }
 
-  removeSameItem(): void {
+  removeSameItem(event: Event): void {
+    if (event) {
+      this.stopEventPropagation(event);
+    }
     this.sameItemInCartCount--;
     if (this.sameItemInCartCount <= 0) {
       this.isAddedInCart = false;
     }
   }
 
+  stopEventPropagation(event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
 }

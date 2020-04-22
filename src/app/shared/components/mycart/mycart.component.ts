@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CartItem } from 'src/app/models';
+import { NavigationService } from 'src/app/services';
 
 @Component({
   selector: 'app-mycart',
@@ -8,7 +9,8 @@ import { CartItem } from 'src/app/models';
 })
 export class MycartComponent implements OnInit {
   myCartList: Array<CartItem>;
-  constructor() { }
+  @Output() onCheckout: EventEmitter<boolean> = new EventEmitter<boolean>();
+  constructor(private navigation: NavigationService) { }
 
   ngOnInit() {
     this.loadPage();
@@ -19,7 +21,8 @@ export class MycartComponent implements OnInit {
   }
 
   checkout(): void {
-
+    this.onCheckout.emit();
+    this.navigation.navigate(['store', 'cart', Math.random().toFixed(0), 'checkout']);
   }
 
 }

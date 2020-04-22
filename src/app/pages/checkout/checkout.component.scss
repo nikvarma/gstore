@@ -1,0 +1,24 @@
+.checkout-page {
+  & .input-box-h {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  & .steps-round-number {
+      top: 24%;
+      left: 16px;
+      width: 32px;
+      height: 32px;
+      color: #51aa1b;
+      text-align: center;
+      line-height: 26px;
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid #51aa1b;
+      &.font-medium {
+          font-size: 16px;
+      }
+  }
+  & nz-form-label {
+      color: #888;
+      font-weight: 300;
+  }
+}

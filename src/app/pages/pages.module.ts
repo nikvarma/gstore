@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { UserModule } from './user/user.module';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
@@ -30,7 +29,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
   ],
   imports: [
     CommonModule,
-    UserModule,
     SharedModule
   ]
 })

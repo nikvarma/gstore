@@ -11,7 +11,7 @@
                     <span class="text-white">GROFERS13</span>
                 </strong>
             </div>
-            <div nz-col nzMd="12" nzLg="12" class="header-top-bar plr-1 text-right">
+            <div nz-col nzMd="12" nzLg="12" class="header-top-bar plr-1 text-right hide-xsm hide-sm">
                 <a role="button" class="mlr-2">
                     <span class="text-white mr-4"><i nz-icon nzType="environment" nzTheme="fill"></i></span>
                     <span class="text-white" [innerText]="currLocation"></span>
@@ -28,25 +28,66 @@
         </div>
     </div>
 </div>
-<div class="pb-2 pt-2 bg-default">
+<div class="bg-default pb-2 pt-2 top-header">
     <div class="app-container">
         <div nz-row>
-            <div nz-col nzMd="4" nzLg="6" class="plr-1 logo-box">
+            <div nz-col nzMd="4" nzLg="6" nzSm="24" nzXs="24" class="plr-1 logo-box">
                 <a [routerLink]="['home']" class="logo-text">
                     <span class="mr-4">
                         <i nz-icon nzType="shopping" nzTheme="outline"></i>
                     </span>
-                    <span>GroceriStore</span>
+                    <span class="hide-xsm hide-sm">GroceriStore</span>
                 </a>
             </div>
-            <div nz-col nzMd="16" nzLg="12" class="plr-1 ">
-                <div class="search-products">
+            <div nz-col nzMd="16" nzLg="12" nzSm="24" nzXs="24" class="plr-1">
+                <div class="search-products flex-spacer">
                     <auto-complete-search class="min-w100"></auto-complete-search>
                 </div>
             </div>
             <div nz-col nzMd="4" nzLg="6" class="plr-1 text-right">
-                <nz-badge [nzCount]="5">
-                    <button nz-button nzShape="circle" class="btn-36" (click)="openCart(true)">
+                <span class="flex-spacer"></span>
+                <a nz-dropdown class="user-profile" [nzDropdownMenu]="profileMenu" nzPlacement="bottomRight">
+                    <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                    </nz-avatar>
+                    <span class="username-link">Hi, Ana</span>
+                    <i nz-icon nzType="caret-down" nzTheme="outline" class="text-white"></i>
+                    <nz-dropdown-menu #profileMenu="nzDropdownMenu">
+                        <ul nz-menu class="profile-dropdown">
+                            <li nz-menu-item>
+                                <a [routerLink]="['user', 'profile']">
+                                    <i nz-icon nzType="user" class="mr-2" nzTheme="outline"></i> My Profile
+                                </a>
+                            </li>
+                            <li nz-menu-item>
+                                <a [routerLink]="['user', 'settings']">
+                                    <i nz-icon nzType="setting" class="mr-2" nzTheme="outline"></i> Settings
+                                </a>
+                            </li>
+                            <li nz-menu-item>
+                                <a [routerLink]="['user', 'wish-list']">
+                                    <i nz-icon nzType="heart" class="mr-2" nzTheme="outline"></i> Wish List
+                                </a>
+                            </li>
+                            <li nz-menu-item>
+                                <a [routerLink]="['user', 'orders']">
+                                    <i nz-icon nzType="solution" class="mr-2" nzTheme="outline"></i> Order List
+                                </a>
+                            </li>
+                            <li nz-menu-item>
+                                <a [routerLink]="['user', 'order-status']">
+                                    <i nz-icon nzType="hourglass" class="mr-2" nzTheme="outline"></i> Order Status
+                                </a>
+                            </li>
+                            <li nz-menu-divider></li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="logout" nzTheme="outline"></i> Logout
+                            </li>
+                        </ul>
+                    </nz-dropdown-menu>
+                </a>
+
+                <nz-badge [nzCount]="5" class="badge-box mlr-2">
+                    <button nz-button nzShape="circle" (click)="openCart()">
                         <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
                     </button>
                 </nz-badge>
@@ -55,7 +96,7 @@
     </div>
 </div>
 
-<div class="bg-white">
+<div class="bg-white shadow-b">
     <div class="app-container">
         <div class="product-menu-top plr-1" [ngClass]="(menuMode == 'horizontal') ? 'vertical-top-menu' : ''">
             <ul nz-menu [nzMode]="menuMode">
@@ -91,10 +132,10 @@
         </div>
     </div>
 </div>
-<nz-drawer [nzVisible]="showMyCart" [nzTitle]="cartHeader" (nzOnClose)="openCart(false)" nzClosable="true"
+<nz-drawer [nzVisible]="showMyCart" [nzTitle]="cartHeader" (nzOnClose)="openCart()" nzClosable="true"
     [nzBodyStyle]="{ height: 'calc(100% - 150px)', overflow: 'auto', 'padding-bottom': '55px' }"
     nzWrapClassName="cart-drawer">
-    <app-mycart></app-mycart>
+    <app-mycart (onCheckout)="openCart()"></app-mycart>
 </nz-drawer>
 <nz-modal [(nzVisible)]="authModalIsVisible" nzTitle="modalTitle" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
     [nzOkLoading]="isOkLoading">

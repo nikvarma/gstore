@@ -1,0 +1,7 @@
+.order-status-page {
+  & nz-timeline-item {
+    & .timeline-active {
+      color: #0cc5b7;
+    }
+  }
+}

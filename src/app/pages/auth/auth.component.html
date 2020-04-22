@@ -1,1 +1,106 @@
-<p>auth works!</p>
+<div class="pb-2 pt-2 auth-page">
+    <div class="app-container">
+        <div nz-row>
+            <div nz-col nzMd="24" nzLg="24" class="header-top-bar mtb-1 plr-1">
+                <div class="m-auto store-login shadow-b-10">
+                    <h5 class="font-20 mb-2">Login</h5>
+                    <form class="store-form">
+                        <nz-form-item class="mb-2">
+                            <nz-form-label nzRequired nzFor="name">Username</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your username!">
+                                <nz-input-group nzPrefixIcon="user">
+                                    <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-2">
+                            <nz-form-label nzRequired nzFor="name">Password</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group nzPrefixIcon="lock">
+                                    <input type="password" nz-input formControlName="password" placeholder="Password" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="m-0">
+                            <nz-form-control>
+                                <div class="flex-space mb-1">
+                                    <label nz-checkbox formControlName="remember">
+                                        <span>Remember me</span>
+                                    </label>
+                                    <span class="flex-spacer"></span>
+                                    <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+                                </div>
+                                <div class="pt-2">
+                                    <button nz-button nzSize="large" class="btn bg-default auth-btn" nzBlock>
+                                        <span class="font-18 text-white">Log in</span>
+                                    </button>
+                                </div>
+                                <div class="pt-2">
+                                    <button nz-button class="btn" nzType="default" nzBlock>
+                                        <span class="font-18">Register Now!</span>
+                                    </button>
+                                </div>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </form>
+                </div>
+            </div>
+
+            <div nz-col nzMd="24" nzLg="24" class="header-top-bar mtb-1 plr-1">
+                <div class="m-auto store-login shadow-b-10">
+                    <h5 class="font-20 mb-1">Register</h5>
+                    <form class="store-form">
+                        <nz-form-item class="mb-2">
+                            <nz-form-label nzRequired nzFor="name">Full Name</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your full name!">
+                                <nz-input-group nzPrefixIcon="user">
+                                    <input type="text" nz-input formControlName="fullName" placeholder="Full Name" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-2">
+                            <nz-form-label nzRequired nzFor="name">Mobile Number</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your mobile number!">
+                                <nz-input-group nzPrefixIcon="mobile">
+                                    <input type="text" nz-input formControlName="mobileNumber"
+                                        placeholder="Mobile Number" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-2">
+                            <nz-form-label nzRequired nzFor="name">Email Address</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your email address!">
+                                <nz-input-group nzPrefixIcon="mail">
+                                    <input type="text" nz-input formControlName="emailAddress"
+                                        placeholder="Email Address" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1">
+                            <nz-form-label nzRequired nzFor="name">Password</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group nzPrefixIcon="lock">
+                                    <input type="password" nz-input formControlName="password" placeholder="Password" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="m-0">
+                            <nz-form-control>
+                                <div class="pt-2">
+                                    <button nz-button nzBlock nzSize="large" class="btn bg-default auth-btn">
+                                        <span class="font-18 text-white">Register Now!</span>
+                                    </button>
+                                </div>
+                                <div class="pt-2">
+                                    <button nzType="dashed" nz-button nzBlock class="btn">
+                                        <span class="font-18">Log in</span>
+                                    </button>
+                                </div>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
