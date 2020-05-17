@@ -1,13 +1,11 @@
-<div #productTopControls class="product-page">
+<div #productTopControls class="product-page hide-sm hide-xsm">
     <nz-affix [nzTarget]="productTopControls" id="product-top-controls-target">
         <div class="bg-white shadow-b-10">
             <div class="app-container">
                 <div nz-row>
-                    <div class="plr-1 product-top-controls flex-content">
-                        <div class="product-pagination text-right mlr-2" nz-col nzMd="5" nzLg="5">
-                        </div>
+                    <div class="product-top-controls flex-content">
                         <div class="flex-spacer"></div>
-                        <div class="product-pagination text-right mlr-2" nz-col nzMd="9" nzLg="9">
+                        <div class="product-pagination text-right mlr-2" nz-col nzMd="18" nzLg="9">
                             <nz-pagination [nzPageIndex]="3" [nzTotal]="50" nzShowSizeChanger [nzPageSize]="10">
                             </nz-pagination>
                         </div>
@@ -29,15 +27,15 @@
 <div class="pb-2 pt-2 bg-light shadow-b-10 product-page">
     <div class="app-container">
         <div nz-row>
-            <div class="plr-1" nz-col nzMd="5" nzLg="5" #productTarget>
+            <div class="plr-1" nz-col nzMd="8" nzLg="5" #productTarget>
                 <!-- <nz-affix [nzTarget]="productTarget" id="product-target"> -->
-                <app-filter class="block-content shadow-b-10"></app-filter>
+                <app-filter class="block-content shadow-b-10 hide-sm hide-xsm"></app-filter>
                 <!-- </nz-affix> -->
             </div>
-            <div class="plr-1 product-list" nz-col nzMd="19" nzLg="19">
+            <div class="plr-1 product-list" nz-col nzMd="16" nzLg="19">
                 <div nz-row>
                     <ng-template ngFor let-product [ngForOf]="productList">
-                        <div nz-col nzXs="12" nzSm="12" nzMd="6" nzLg="6">
+                        <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="6">
                             <a [routerLink]="['./', 'detail', product.id]">
                                 <app-card-product (click)="showProductDetail(product)"
                                     class="btn product-item inline-slide" [productDetail]="product">

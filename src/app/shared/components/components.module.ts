@@ -17,7 +17,7 @@ import { CarbonComponentModule } from 'src/app/carbon-component.module';
 import { AntComponentModule } from 'src/app/ant-component.module';
 import { RouterModule } from '@angular/router';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardSliderComponent } from './card-slider/card-slider.component';
 import { CardProductComponent } from './card-product/card-product.component';
@@ -33,6 +33,7 @@ import { AddedCartListComponent } from './added-cart-list/added-cart-list.compon
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BigimgSliderComponent } from './bigimg-slider/bigimg-slider.component';
 import { AddToCartButtonComponent } from './add-to-cart-button/add-to-cart-button.component';
+import { TableGirdComponent } from './table-gird/table-gird.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AddToCartButtonComponent } from './add-to-cart-button/add-to-cart-butto
     CartListComponent,
     CartItemComponent,
     CommentsComponent,
+    TableGirdComponent,
     ContainerComponent,
     CardSliderComponent,
     CardSliderDirective,
@@ -71,14 +73,18 @@ import { AddToCartButtonComponent } from './add-to-cart-button/add-to-cart-butto
     CommonModule,
     RouterModule,
     AntComponentModule,
+    ReactiveFormsModule,
     CarbonComponentModule,
   ],
   exports: [
+    LoginComponent,
+    SignupComponent,
     FilterComponent,
     HeaderComponent,
     FooterComponent,
     CarouselComponent,
     AntComponentModule,
+    TableGirdComponent,
     CardSliderComponent,
     CardSliderDirective,
     CardProductComponent,

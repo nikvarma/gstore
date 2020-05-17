@@ -1,7 +1,6 @@
 .product-detail-page {
     & bigimg-slider {
         display: block;
-        height: 350px;
         border-radius: 2px;
         border: 1px solid #eeeeee;
     }
@@ -47,6 +46,9 @@
         text-transform: uppercase;
         & span, & i {
             color: white;
+        }
+        &.smaller {
+            padding: 10px 25px;
         }
     }
     & .detail-right {

@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, APP_BASE_HREF } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppStoreModule } from './store.module';
 import { RootStoreModule } from './root-store/root-store.module';
+import { AppErrorHandler } from './services/handlers/error-handlers.service';
+import { HttpErrorInterceptor } from './services/handlers/http-error.interceptor';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(en);
 
@@ -20,14 +23,20 @@ registerLocaleData(en);
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    FormsModule,
     HttpClientModule,
     AppStoreModule,
-    AppRoutingModule,
     RootStoreModule,
-    FormsModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    RouterModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+  ]
 })
 export class AppModule { }

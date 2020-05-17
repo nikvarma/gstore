@@ -20,6 +20,8 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, VideoCameraFill, UploadOutline, UserOutline,
   LockFill, MenuFoldOutline
@@ -40,6 +42,8 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzButtonModule,
     NzAffixModule,
     NzModalModule,
+    NzTableModule,
+    NzMessageModule,
     NzDividerModule,
     NzBackTopModule,
     NzTimelineModule,
@@ -61,6 +65,8 @@ const icons: IconDefinition[] = [AccountBookFill, AlertOutline, AlertFill, Video
     NzButtonModule,
     NzAffixModule,
     NzModalModule,
+    NzTableModule,
+    NzMessageModule,
     NzDividerModule,
     NzBackTopModule,
     NzTimelineModule,

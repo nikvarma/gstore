@@ -1,17 +1,28 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { CartItem, VegStatus, WeightUnit } from 'src/app/models';
+import { Store, select } from '@ngrx/store';
+import { State } from 'src/app/pages/pages-store/page-store.state';
+import { Observable, Subject } from 'rxjs';
+import { DeviceSize } from 'src/app/models/common-types';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { selectDeviceSize } from 'src/app/pages/pages-store/common';
 
 @Component({
   selector: 'added-cart-list',
   templateUrl: './added-cart-list.component.html',
-  styleUrls: ['./added-cart-list.component.scss']
+  styleUrls: ['./added-cart-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AddedCartListComponent implements OnInit {
+export class AddedCartListComponent implements OnInit, OnDestroy {
   @Input() cartList: Array<CartItem>;
-  constructor() { }
+  deviceSize$: Observable<DeviceSize>;
+  unsubscribe$: Subject<any>;
+  constructor(public store: Store<State>) { }
 
   ngOnInit() {
+    this.unsubscribe$ = new Subject();
     this.loadPage();
+    this.deviceSize$ = this.store.pipe(distinctUntilChanged() ,select(selectDeviceSize));
   }
 
   loadPage() {
@@ -48,6 +59,11 @@ export class AddedCartListComponent implements OnInit {
       weightUnit: WeightUnit.Gm.toString().toLocaleLowerCase(),
       totalItem: 3
     });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
 }

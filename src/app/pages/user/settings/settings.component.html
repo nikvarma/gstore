@@ -1,12 +1,60 @@
-<div class="user-profile-page">
+<div class="user-settings-page">
     <div class="app-container shadow-b p-1 bg-white">
         <div nz-row>
             <div nz-col nzMd="24" nzLg="24">
-                <div class="header-section">
-                    <h5 class="font-18">Settings</h5>
+                <div class="header-section" [class.mlr-2]="(deviceSize$ | async) <= 2">
+                    <h5 class="font-18">
+                        Settings
+                    </h5>
                 </div>
-                <div class="form-section">
+                <div class="form-section" [class.mlr-2]="(deviceSize$ | async) <= 2">
                     <div nz-row [nzGutter]="24">
+                        <nz-form-item nz-col [nzSpan]="24" class="mb-2">
+                            <label class="font-b500">Update Password</label>
+                            <button nz-button nzType="dashed" class="pull-right btn btn-dash" nzSize="small">
+                                <i nz-icon nzType="save" nzTheme="outline"></i>
+                                Save
+                            </button>
+                            <div class="clear-all"></div>
+                        </nz-form-item>
+
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">Password</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your username!">
+                                <nz-input-group>
+                                    <input type="text" nz-input formControlName="userName" placeholder="first name" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="12">
+                            <nz-form-label nzRequired nzFor="name">Confirm Password</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <input type="password" nz-input formControlName="password" placeholder="last name" />
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="smallSpanSize">
+                            <nz-form-label nzFor="name">Latest products update</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <nz-switch></nz-switch>
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item class="mb-1" nz-col [nzSpan]="smallSpanSize">
+                            <nz-form-label nzFor="name">Update before delivery</nz-form-label>
+                            <nz-form-control nzErrorTip="Please input your Password!">
+                                <nz-input-group>
+                                    <nz-switch></nz-switch>
+                                    <label class="mlr-2">before</label>
+                                    <nz-select ngModel="lucy" nzLoading class="min-w40">
+                                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                                    </nz-select>
+                                </nz-input-group>
+                            </nz-form-control>
+                        </nz-form-item>
                     </div>
                 </div>
             </div>

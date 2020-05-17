@@ -4,11 +4,12 @@ import { LandingComponent } from './layouts';
 import { ComponentsModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
 import { UserLandingComponent } from './layouts/user-landing/user-landing.component';
+import { SizeDetectorDirective } from './directive/size-detector.directive';
 
 @NgModule({
   declarations: [
     LandingComponent,
-    UserLandingComponent
+    SizeDetectorDirective
   ],
   imports: [
     CommonModule,
@@ -17,8 +18,7 @@ import { UserLandingComponent } from './layouts/user-landing/user-landing.compon
   ], exports: [
     RouterModule,
     LandingComponent,
-    ComponentsModule,
-    UserLandingComponent
+    ComponentsModule
   ]
 })
 export class SharedModule { }

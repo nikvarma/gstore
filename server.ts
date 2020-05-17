@@ -21,6 +21,7 @@ import {enableProdMode} from '@angular/core';
 
 import * as express from 'express';
 import {join} from 'path';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 enableProdMode();
@@ -56,7 +57,7 @@ app.get('*.*', express.static(DIST_FOLDER, {
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  res.render('index', { req });
+  res.render('index', { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
 });
 
 // Start up the Node server

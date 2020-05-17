@@ -1,16 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { ProductList, WeightUnit, VegStatus } from 'src/app/models';
+import { Store, select } from '@ngrx/store';
+import { State } from '../pages-store/page-store.state';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { DeviceSize } from 'src/app/models/common-types';
+import { selectDeviceSize } from '../pages-store/common';
+import { MetaTagService } from 'src/app/shared/lib';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   productCategory: Array<{}>;
   imageBannerList: Array<{}>;
+  showSlideIcon: boolean;
   productList: Array<ProductList>;
-  constructor() { 
+  deviceType$: Observable<DeviceSize>;
+  $unsubscribe: Subject<any> = new Subject();
+  constructor(public store: Store<State>, public metaService: MetaTagService) {
     this.productList = [];
     this.productCategory = new Array<{}>();
     this.imageBannerList = new Array<{}>();
@@ -18,6 +29,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
+    this.deviceType$ = this.store.pipe(select(selectDeviceSize));
+    this.deviceType$.pipe(takeUntil(this.$unsubscribe)).subscribe((val => {
+      if (DeviceSize[val] === DeviceSize[DeviceSize.VLARGE] || 
+        DeviceSize[val] === DeviceSize[DeviceSize.LARGE] ||
+        DeviceSize[val] === DeviceSize[DeviceSize.MEDIUM]) {
+          this.showSlideIcon = true;
+      } else {
+        this.showSlideIcon = false;
+      }
+    }));
+    this.metaService.homeMetaTag();
   }
 
   loadData(): void {
@@ -206,5 +228,10 @@ export class HomeComponent implements OnInit {
       thumbnail: "assets/product-images/1.jpg",
       weightUnit: WeightUnit.Gm.toString().toLocaleLowerCase()
     });
+  }
+
+  ngOnDestroy(): void {
+    this.$unsubscribe.next();
+    this.$unsubscribe.complete();
   }
 }

@@ -2,10 +2,17 @@
     <div class="app-container shadow-b p-1 bg-white">
         <div nz-row>
             <div nz-col nzMd="24" nzLg="24">
-                <div class="header-section">
-                    <h5 class="font-18">My Profile</h5>
+                <div class="header-section" [class.mlr-2]="(deviceSize$ | async) <= 2">
+                    <h5 class="font-18">
+                        My Profile
+                        <button nz-button nzType="dashed" class="pull-right btn btn-dash" nzSize="small">
+                            <i nz-icon nzType="save" nzTheme="outline"></i>
+                            Save
+                        </button>
+                        <div class="clear-all"></div>
+                    </h5>
                 </div>
-                <div class="form-section">
+                <div class="form-section" [class.mlr-2]="(deviceSize$ | async) <= 2">
                     <div nz-row [nzGutter]="24">
                         <nz-form-item class="mb-1" nz-col [nzSpan]="12">
                             <nz-form-label nzRequired nzFor="name">First Name</nz-form-label>

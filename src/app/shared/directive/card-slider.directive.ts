@@ -33,9 +33,8 @@ export class CardSliderDirective implements OnInit, AfterViewInit, OnChanges, On
       this._sliderWidth = this.eleRef.nativeElement.clientWidth;
       this._slideWidth = (this._sliderElems) ? this._sliderElems.item(0).clientWidth : 0;
       this._scrollLeft = (this._sliderElems) ? this._sliderElems.item(0).scrollLeft : 0;
-      this._maxScrollIndex = this._sliderElems.length - (this._sliderWidth/this._slideWidth);
+      this._maxScrollIndex = Math.round(this._sliderElems.length - (this._sliderWidth/this._slideWidth));
     }
-    console.dir(this.eleRef.nativeElement);
     this.setSliderConfig();
   }
 

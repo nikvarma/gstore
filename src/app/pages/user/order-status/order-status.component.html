@@ -3,9 +3,16 @@
         <div nz-row>
             <div nz-col nzMd="24" nzLg="24">
                 <div class="header-section">
-                    <h5 class="font-18">Order Status</h5>
+                    <h5 class="font-18 inline-block-content">Order Status</h5>
+                    <nz-input-group [nzSuffix]="suffixIconSearch" class="inline-block-content pull-right w40">
+                        <input type="text" nz-input nzSize="small" placeholder="search order #" />
+                        <ng-template #suffixIconSearch>
+                            <i nz-icon nzType="search"></i>
+                        </ng-template>
+                    </nz-input-group>
+                    <div class="clear-all"></div>
                 </div>
-                <div class="order-timeline">
+                <div class="order-timeline ptb-1">
                     <nz-timeline nzMode="alternate">
                         <nz-timeline-item [nzDot]="dotconfirmTemplate">
                             <span class="font-12 secondary-text">Order Confirmed</span>
@@ -20,7 +27,7 @@
                         <nz-timeline-item [nzDot]="dotclockTemplate">
                             <span class="font-12">Package Dispatched</span>
                         </nz-timeline-item>
-                        <nz-timeline-item nzColor="#0cc5b7"> 2015-09-01</nz-timeline-item>
+                        <nz-timeline-item nzColor="#0cc5b7">2015-09-01</nz-timeline-item>
                         <nz-timeline-item nzColor="#0cc5b7">Create a services site 2015-09-01</nz-timeline-item>
                         <nz-timeline-item [nzDot]="dotclockTemplate">Technical testing 2015-09-01</nz-timeline-item>
                     </nz-timeline>

@@ -1,1 +1,41 @@
-<p>menu works!</p>
+<div class="menu-items">
+    <div class="logo-section">
+        <div class="logo-image">
+            <img src="assets/logo-ddoorstore.png" class="sm-img" />
+            <span class="font-10">Supermarket, Super Value</span>
+        </div>
+        <div class="logo-text font-14 secondary-text">
+            DDoorStore.com
+        </div>
+    </div>
+    <!-- <div class="profile-image">
+
+    </div> -->
+    <div class="menu-links">
+        <ul nz-menu nzMode="inline" nzSelectable="true" class="menu-links-content">
+            <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: navigationLink }">
+            </ng-container>
+
+            <ng-template #menuTpl let-menus>
+                <ng-container *ngFor="let menu of menus;">
+                    <ng-template #mainMenuItems>
+                        <li nz-menu-item [nzSelected]="menu.selected" [nzMatchRouter]="onLoadMatchMenuToUrl">
+                            <a [routerLink]="[menu.link]" class="item-link">
+                                <i nz-icon *ngIf="menu.icon" [nzType]="menu.icon" class="mr-2" nzTheme="outline"></i>
+                                <span [innerText]="menu.label"></span>
+                            </a>
+                        </li>
+                    </ng-template>
+
+                    <li *ngIf="menu.subMenus && menu.subMenus.length > 0;else mainMenuItems" [nzIcon]="menu.icon"
+                        [nzOpen]="menu.defaultOpen" nz-submenu [nzTitle]="menu.label">
+                        <ul class="menu-sub-item">
+                            <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menu.subMenus }">
+                            </ng-container>
+                        </ul>
+                    </li>
+                </ng-container>
+            </ng-template>
+        </ul>
+    </div>
+</div>

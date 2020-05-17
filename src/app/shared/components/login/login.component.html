@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="m-auto store-login shadow-b-10">
+    <h5 class="font-20 mb-2">Login</h5>
+    <form class="store-form" [formGroup]="loginForm" (ngSubmit)="onLogin($event)">
+        <nz-form-item class="mb-2">
+            <nz-form-label nzRequired nzFor="name">Username</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your username!">
+                <nz-input-group nzPrefixIcon="user">
+                    <input type="text" nz-input [attr.disabled]="isLoading" formControlName="userName" placeholder="Username" />
+                </nz-input-group>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="mb-2">
+            <nz-form-label nzRequired nzFor="name">Password</nz-form-label>
+            <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-input-group nzPrefixIcon="lock">
+                    <input type="password" nz-input [attr.disabled]="isLoading" formControlName="password" placeholder="Password" />
+                </nz-input-group>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="m-0">
+            <nz-form-control>
+                <div class="flex-space mtb-1">
+                    <label nz-checkbox [ngModelOptions]="{standalone: true}" [(ngModel)]="rememberLogin">
+                        <span>Remember me</span>
+                    </label>
+                    <span class="flex-spacer"></span>
+                    <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+                </div>
+                <div class="pt-2">
+                    <button nz-button [nzLoading]="isLoading" [disabled]="!loginForm.valid" nzType="primary" nzSize="large" class="btn bg-default auth-btn" nzBlock>
+                        <span class="font-18 text-white">Log in</span>
+                    </button>
+                </div>
+                <div class="pt-2">
+                    <button nz-button class="btn" nzType="default" nzBlock (click)="gotoRegister($event)">
+                        <span class="font-18">Register Now!</span>
+                    </button>
+                </div>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>

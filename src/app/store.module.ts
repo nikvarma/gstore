@@ -15,9 +15,6 @@ import { ErrorsComponent } from './pages/errors/errors.component';
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { UserModule } from './pages/user/user.module';
-
-
 
 export const StoreRoutes: Routes = [
   {
@@ -28,13 +25,13 @@ export const StoreRoutes: Routes = [
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'auth/login', component: AuthComponent },
-      { path: 'auth/sign-up', component: AuthComponent },
       { path: 'products/:category', component: ProductsComponent },
       { path: 'cart/:cartid/checkout', component: CheckoutComponent },
       { path: 'delivery-slot', component: SelectDeliverySlotComponent },
       { path: 'terms-and-conditions', component: TermsConditionsComponent },
       { path: 'products/:category/:subcategory', component: ProductsComponent },
+      { path: 'auth/login', component: AuthComponent, data: { page: 'login' } },
+      { path: 'auth/sign-up', component: AuthComponent, data: { page: 'signup' } },
       { path: 'products/:category/detail/:id', component: ProductDetailsComponent },
       { path: 'products/:category/:subcategory/:id', component: ProductDetailsComponent },
       { path: 'user', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule) },
@@ -50,6 +47,7 @@ export const StoreRoutes: Routes = [
     CommonModule,
     PagesModule,
     SharedModule,
+    RouterModule,
     RouterModule.forChild(StoreRoutes),
   ],
   exports: []

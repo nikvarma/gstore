@@ -7,7 +7,9 @@
             <div class="plr-1 product-list" nz-col nzMd="12" nzLg="12">
                 <div class="detail-right bg-white">
                     <span class="badge product-badge badge-success">50% OFF</span>
-                    <h2 class="product-title font-24">SaveMore Corn Flakes (Pouch)</h2>
+                    <h2 class="product-title" [class.font-24]="(deviceSize$ | async) > 2"
+                        [class.font-20]="(deviceSize$ | async) <= 2">SaveMore Corn Flakes (Pouch)
+                    </h2>
                     <h6 class="mb-1">
                         <strong>
                             <span class="tag-color">
@@ -17,15 +19,23 @@
                         </strong>
                         - 500 gm
                     </h6>
-                    <p class="regular-price tertiary-text line-through font-16">
+                    <p class="regular-price tertiary-text line-through"
+                    [class.font-16]="(deviceSize$ | async) > 2" [class.font-14]="(deviceSize$ | async) <= 2">
                         <i nz-icon nzType="tags" class="m-5" nzTheme="outline"></i>
                         MRP : $800.99
                     </p>
-                    <p class="offer-price font-20 font-b300">
+                    <p class="offer-price font-b300" [class.font-20]="(deviceSize$ | async) > 2"
+                        [class.font-16]="(deviceSize$ | async) <= 2">
                         Discounted price :
-                        <span class="secondary-text font-30">$450.99</span>
+                        <nz-select class="quantity-select" nzSize="small">
+                            <nz-option nzValue="1" nzLabel="1"></nz-option>
+                        </nz-select>
+                        <span class="mlr-2">x</span>
+                        <span class="secondary-text" [class.font-30]="(deviceSize$ | async) > 2"
+                            [class.font-20]="(deviceSize$ | async) <= 2">$450.99</span>
                     </p>
-                    <button class="btn shopping-cart btn-secondary mtb-2" nz-button nzSize="large">
+                    <button class="btn shopping-cart btn-secondary mtb-2" [class.smaller]="(deviceSize$ | async) <= 2"
+                    nz-button nzSize="large">
                         <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
                         <span>Add To Cart</span>
                     </button>
@@ -34,25 +44,31 @@
         </div>
         <div nz-row class="mtb-2">
             <div class="plr-1 product-list" nz-col nzMd="24" nzLg="24">
-                <div class="short-description">
-                    <h5 class="short-desc-title font-20">
-                        Quick Overview
-                        <p class="font-b500">
-                            Availability:
-                            <span class="badge product-badge badge-success">In Stock</span>
-                        </p>
-                    </h5>
-                    <p>
-                        <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b>
-                        Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.
-                    </p>
-                    <p>
-                        Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class
-                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hiMenaeos.
-                        Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna
-                        pretium eros convallis interdum.
-                    </p>
-                </div>
+                <nz-tabset class="bg-white">
+                    <nz-tab nzTitle="Description">
+                        <div class="short-description">
+                            <h5 class="short-desc-title font-20">
+                                Quick Overview
+                                <p class="font-b500">
+                                    Availability:
+                                    <span class="badge product-badge badge-success">In-Stock</span>
+                                </p>
+                            </h5>
+                            <p>
+                                <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b>
+                                Nam fringilla augue nec est tristique auctor. Donec non est at
+                                libero vulputate rutrum.
+                            </p>
+                            <p>
+                                Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus
+                                malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent
+                                per conubia nostra, per inceptos hiMenaeos. Integer enim purus,
+                                posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna
+                                pretium eros convallis interdum.
+                            </p>
+                        </div>
+                    </nz-tab>
+                </nz-tabset>
             </div>
         </div>
     </div>

@@ -4,8 +4,7 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'card-inline-slider',
   templateUrl: './card-inline-slider.component.html',
-  styleUrls: ['./card-inline-slider.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./card-inline-slider.component.scss']
 })
 export class CardInlineSliderComponent implements OnInit, AfterContentInit, AfterViewInit, OnDestroy {
   currentItem: any;

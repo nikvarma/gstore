@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+//linear-gradient(135deg, #9C27B0 1%, #30def9 100%)
 $secondary-color: #0cc5b7;
 %bg-default {
   background: $secondary-color;
@@ -164,6 +164,10 @@ ol {
   padding-bottom: 0.5rem;
 }
 
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -172,8 +176,15 @@ ol {
   padding: 0 0.9rem;
 }
 
+.plr-2 {
+  padding: 0 0.45rem;
+}
+
 .ptb-40 {
   padding: 40px 0;
+}
+.p-2 {
+  padding: .5rem;
 }
 .m-0 {
   margin: 0;
@@ -223,6 +234,9 @@ ol {
 }
 .mr-2 {
   margin-right: 0.5rem;
+}
+.m-1 {
+  margin: 1rem;
 }
 .pull-left {
   float: left;
@@ -346,7 +360,11 @@ ol {
     font-size: 20px;
   }
 }
-
+.logo-image {
+  width: 35px;
+  height: auto;
+  display: inline-block;
+}
 .shadow-b-10 {
   @extend %shadow;
   margin-bottom: 10px;
@@ -355,7 +373,18 @@ ol {
 .shadow-b {
   @extend %shadow;
 }
-
+.w40 {
+  width: 40%;
+}
+.w30 {
+  width: 30%;
+}
+.w20 {
+  width: 20%;
+}
+.w80 {
+  width: 80%;
+}
 .min-w5 {
   min-width: 5%;
 }
@@ -370,6 +399,9 @@ ol {
 }
 .min-w25 {
   min-width: 25%;
+}
+.min-w40 {
+  min-width: 40%;
 }
 .min-w50 {
   min-width: 50%;
@@ -389,8 +421,14 @@ ol {
 .w-auto {
   width: auto;
 }
+.max-w100 {
+  max-width: 100%;
+}
 .bg-default {
   @extend %bg-default;
+}
+.h-full {
+  height: 100vh;
 }
 
 .block-bborder {
@@ -437,12 +475,21 @@ ol {
   &.btn-view-all {
     border: 0;
     font-size: 15px;
-    line-height: 22px;
+    line-height: 27px;
     font-weight: 500;
     background: transparent;
   }
   &.btn-secondary {
     @extend %bg-secondary;
+  }
+  &.btn-dash {
+    line-height: initial;
+    color: $secondary-color;
+    border: 1px dashed $secondary-color;
+    & span, & a {
+      line-height: initial;
+      color: $secondary-color;
+    }
   }
 }
 
@@ -513,10 +560,14 @@ ol {
   clear: both;
 }
 
+.quantity-select {
+  border-radius: 3px;
+}
+
 app-card-product {
   height: auto;
   margin: 5px auto;
-  min-width: 222px;
+  min-width: 215px;
   display: inline-flex;
 }
 
@@ -533,9 +584,9 @@ card-inline-slider {
     scroll-snap-type: x mandatory;
   }
   & .inline-slide {
-    touch-action: pan-y;
     scroll-behavior: smooth;
     scroll-snap-align: start;
+    touch-action: pan-y pan-x;
   }
   & .left-arrow,
   & .right-arrow {
@@ -615,7 +666,8 @@ card-inline-slider {
 }
 
 .profile-dropdown,
-.user-action-link {
+.user-action-link,
+.menu-links-content {
   min-width: 150px;
   & li,
   & a,
@@ -624,8 +676,10 @@ card-inline-slider {
       color: #0cc5b7;
     }
   }
-  & .ant-menu-item {
-    &:hover span, & i {
+  & .ant-menu-item,
+  & .ant-menu-submenu {
+    &:hover span,
+    & i {
       color: #0cc5b7;
     }
     &:hover {
@@ -665,7 +719,13 @@ card-inline-slider {
 }
 
 .checkout-page,
-.user-profile-page {
+.user-profile-page,
+.user-settings-page,
+.order-status-page,
+.user-orders-page {
+  & .app-container {
+    min-height: 472px;
+  }
   & .checkout-u--detail,
   & .textarea-box {
     & .ant-collapse-header {
@@ -697,6 +757,11 @@ card-inline-slider {
   }
 }
 
+.product-detail-page {
+  & bigimg-slider {
+    height: 350px;
+  }
+}
 .auth-page {
   & label {
     color: #666;
@@ -710,9 +775,15 @@ card-inline-slider {
       transition: 500ms;
     }
   }
+  & .store-login {
+    padding: 35px;
+    max-width: 320px;
+    background-color: white;
+  }
 }
-
-
+.menu-sub-item {
+  background-color: #f2f2f2;
+}
 //mixin
 
 @mixin display-none($size) {
@@ -732,17 +803,80 @@ card-inline-slider {
   }
   @include display-none("xsm");
   @include display-block("xsm");
+  .app-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .plr-1 {
+    padding: 0 0.45rem;
+  }
+  card-inline-slider {
+    & .inline-slider-box {
+      overflow-x: auto;
+    }
+  }
+  .badge.product-badge {
+    top: 7px;
+  }
+  .home-top-carousel {
+    height: 120px;
+  }
+  .veg-status {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    line-height: 15px;
+    &::before {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  app-card-product,
+  .product-item {
+    min-width: 165px;
+    & .card-container {
+      padding: 5px 5px 15px;
+      & .card-detail {
+        & .product-card-header {
+          & img {
+            max-height: 150px;
+          }
+        }
+        & .product-card-footer {
+          & .product-add-btn {
+            display: flex;
+            justify-content: center;
+            & button {
+              margin: 5px 0;
+            }
+            & input {
+              width: 78px;
+              font-size: 11px;
+              margin: auto 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .product-detail-page {
+    & bigimg-slider {
+      height: 230px;
+    }
+  }
 }
 
-@media screen and (max-width: 576px) and (min-width: 360px) {
+@media screen and (max-width: 576px) and (min-width: 370px) {
   .slider-box {
     width: 140px;
   }
-  @include display-none("xsm");
-  @include display-block("xsm");
+  .home-top-carousel {
+    height: 140px;
+  }
 }
 
-@media (max-width: 768px) and (min-width: 576px) {
+@media screen and (max-width: 767px) and (min-width: 576px) {
   .app-container {
     max-width: 540px;
   }
@@ -751,23 +885,42 @@ card-inline-slider {
   }
   @include display-none("sm");
   @include display-block("sm");
-}
-
-@media (min-width: 768px) {
-  .app-container {
-    max-width: 720px;
+  .home-top-carousel {
+    height: 220px;
+  }
+  card-inline-slider {
+    & .inline-slider-box {
+      overflow-x: auto;
+    }
   }
 }
 
-@media (min-width: 992px) {
+@media screen and (max-width: 1174px) and (min-width: 768px) {
   .app-container {
-    max-width: 960px;
+    max-width: 765px;
   }
   @include display-none("md");
   @include display-block("md");
+  .home-top-carousel {
+    height: 265px;
+  }
+  card-inline-slider {
+    & .inline-slider-box {
+      overflow-x: auto;
+    }
+  }
+  .max-md-w50 {
+    max-width: 50%;
+  }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1174px) and (min-width: 992px) {
+  .app-container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1175px) {
   .app-container {
     max-width: 1140px;
   }
@@ -776,7 +929,19 @@ card-inline-slider {
 }
 
 // ant desgin //
-
+nz-tabset {
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+}
+nz-switch {
+  & button {
+    &.ant-switch-checked {
+      background-color: $secondary-color;
+    }
+  }
+}
 .ant-badge {
   & .current {
     color: white;
@@ -811,6 +976,7 @@ card-inline-slider {
 .ant-select-selection,
 .ant-checkbox-wrapper,
 .ant-checkbox-checked .ant-checkbox-inner,
+.ant-form-item-children input,
 nz-input-group .ant-input {
   &:hover,
   &:active,
@@ -845,3 +1011,34 @@ nz-input-group .ant-input {
     }
   }
 }
+.menu-drawer {
+  & .ant-drawer-content {
+    background-color: #f2f2f2;
+  }
+  & .menu-links {
+    & .ant-menu-item {
+      &::after {
+        border-right-color: $secondary-color;
+      }
+    }
+  }
+}
+.tablet {
+  & card-inline-slider {
+    & .inline-slider-box {
+      overflow-x: auto;
+    }
+  }
+}
+.ant-tabs-nav {
+  & .ant-tabs-tab-active {
+    color: $secondary-color;
+  }
+}
+.ant-tabs-ink-bar {
+  background-color: $secondary-color;
+}
+.ant-select-selection-selected-value {
+  line-height: inherit;
+}
+//W269N-WFGWX-YVC9B-4J6C9-T83GX

@@ -4,29 +4,28 @@
             <div nz-col nzMd="6" class="plr-1 mtb-1">
                 <div class="block-content">
                     <a [routerLink]="['./', 'home']" class="mb-1 light-text text-cap">
-                        <h6 class="light-text font-12">
-                            GroceriStore
+                        <h6 class="light-text font-12" [innerText]="commonContent.APP_NAME">
                         </h6>
                     </a>
-                    <p class="font-12 secondary-text">Supermarket, Super Value</p>
+                    <p class="font-12 secondary-text" [innerText]="commonContent.APP_SLOGAN"></p>
                 </div>
                 <div class="contact-info">
                     <ul>
                         <li class="secondary-text">
                             <i class="mr-4" nz-icon nzType="phone"></i>
-                            <a href="tel:+918889999999">+91 888 9999 999</a>
+                            <a [href]="commonContent.APP_CONTENT_NUMBER_TEL_1" [innerText]="commonContent.APP_CONTENT_NUMBER_1"></a>
                         </li>
                         <li class="secondary-text">
                             <i class="mr-4" nz-icon nzType="audit" nzTheme="outline"></i>
-                            <a href="mailto:sales@groceristore.com">sales@groceristore.com</a>
+                            <a [href]="commonContent.APP_CONTACT_MAILTO_1" [innerText]="commonContent.APP_CONTACT_EMAIL_1"></a>
                         </li>
                         <li class="secondary-text">
                             <i class="mr-4" nz-icon nzType="contacts"></i>
-                            <a href="mailto:contact@groceristore.com">contact@groceristore.com</a>
+                            <a [href]="commonContent.APP_CONTACT_MAILTO_2" [innerText]="commonContent.APP_CONTACT_EMAIL_2"></a>
                         </li>
                         <li class="secondary-text">
                             <i class="mr-4" nz-icon nzType="global" nzTheme="outline"></i>
-                            <a [routerLink]="['./']">www.groceristore.com</a>
+                            <a [routerLink]="['./']" [innerText]="commonContent.APP_WEBSITE_WWW"></a>
                         </li>
                     </ul>
                 </div>
@@ -51,7 +50,7 @@
                     <li><a [routerLink]="['./', 'offers']">Offers</a></li>
                     <li><a [routerLink]="['./', 'about-us']">About Us</a></li>
                     <li><a [routerLink]="['./', 'contact-us']">Contact Us</a></li>
-                    <li><a [routerLink]="['./', 'store-recipe']">Store Recipe</a></li>
+                    <li><a [routerLink]="['', 'recipes']">Store Recipes</a></li>
                     <li><a [routerLink]="['./', 'privacy-policy']">Privacy Policy</a></li>
                     <li><a [routerLink]="['./', 'terms-and-conditions']">Terms & Conditions</a></li>
                 </ul>
@@ -95,9 +94,10 @@
             <div nz-col nzMd="24" class="plr-1">
                 <a [routerLink]="['./', 'home']">
                     <span>
-                        &copy; Copyright 2020.
+                        &copy; Copyright {{ copyRightYear }}.
                         <i class="mlr-2" nz-icon nzType="shopping" nzTheme="outline"></i>
-                        <strong>GroceriStore</strong>
+                        <strong [innerText]="commonContent.APP_NAME"></strong>
+                        <!-- GroceriStore -->
                         All Rights Reserved
                     </span>
                 </a>

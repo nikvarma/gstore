@@ -1,5 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy } from "@angular/core";
 import { MenuList } from "src/app/models/menu-list";
+import { DeviceSize } from 'src/app/models/common-types';
+import { Observable, Subject } from 'rxjs';
+import { State } from 'src/app/pages/pages-store/page-store.state';
+import { Store, select } from '@ngrx/store';
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { selectDeviceSize } from 'src/app/pages/pages-store/common';
 
 @Component({
   selector: "app-header",
@@ -7,19 +13,23 @@ import { MenuList } from "src/app/models/menu-list";
   styleUrls: ["./header.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   currLocation: string;
   showMyCart: boolean;
   modalTitle: string;
+  showMenu: boolean;
   totalCartItems: number = 0;
   totalCartItemsText: string;
   authModalIsVisible: boolean;
   isOkLoading: boolean = false;
   menuMode: string = "horizontal";
+  deviceSize$: Observable<DeviceSize>;
   onLoadMatchMenuToUrl: boolean = true;
+  unsubscribe$: Subject<any> = new Subject();
   menuList: Array<MenuList> = new Array<MenuList>();
   menuMoreList: Array<MenuList> = new Array<MenuList>();
-  constructor() {
+  constructor(public store: Store<State>, public changeDetectorRef: ChangeDetectorRef) {
+    this.showMenu = false;
     this.showMyCart = false;
   }
 
@@ -31,8 +41,25 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  ngOnInit() {    
+  openMenu(): void {
+    this.showMenu = !this.showMenu;
+  }
+
+  updateComponent(): void {
+    this.changeDetectorRef.detectChanges();
+  }
+
+  logout(event: Event): void {
+
+  }
+
+  ngOnInit() {
+    this.deviceSize$ = this.store.pipe(distinctUntilChanged(), select(selectDeviceSize));
+    this.deviceSize$.pipe(takeUntil(this.unsubscribe$)).subscribe(size => {
+      this.updateComponent();
+    });
     this.currLocation = "New York";
+
     this.menuList.push({
       id: "1",
       url: "grocery-and-staples",
@@ -118,5 +145,9 @@ export class HeaderComponent implements OnInit {
 
   handleCancel(): void {
 
+  }
+
+  ngOnDestroy(): void {
+    
   }
 }

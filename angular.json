@@ -7,6 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "changeDetection": "OnPush",
           "style": "scss"
         }
       },
@@ -156,6 +157,20 @@
               ],
               "sourceMap": false,
               "optimization": true
+            }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "hapistore:build",
+            "serverTarget": "hapistore:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hapistore:build:production",
+              "serverTarget": "hapistore:server:production"
             }
           }
         }

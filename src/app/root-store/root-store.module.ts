@@ -8,25 +8,26 @@ import { EntityDataModule } from "@ngrx/data";
 import { entityConfig } from "../entity-metadata";
 import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "../reducers";
+import { StoreEffects } from '../pages/pages-store';
+import { CommonEffects } from '../pages/pages-store/common';
 
 @NgModule({
   imports: [
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production
-    }),
-    EffectsModule.forRoot([AppEffects]),
-    //StoreRouterConnectingModule.forRoot(),
     EntityDataModule.forRoot(entityConfig),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true
       }
     }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreRouterConnectingModule.forRoot({ stateKey: "router", routerState: RouterState.Minimal, })
+    EffectsModule.forRoot([StoreEffects, CommonEffects, AppEffects]),
+    !environment.production ? StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    }) : []
   ]
 })
 export class RootStoreModule {}

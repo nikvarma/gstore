@@ -1,21 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { ProductList, WeightUnit, VegStatus } from 'src/app/models';
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
+import { Observable, Subject } from 'rxjs';
+import { DeviceSize } from 'src/app/models/common-types';
+import { State } from '../pages-store/page-store.state';
+import { selectDeviceSize } from '../pages-store/common';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
   productCategory: Array<{}>;
   productList: Array<ProductList>;
-  constructor() {
+  deviceSize$: Observable<DeviceSize>;
+  smallSpanSize: number;
+  unsubscribe$: Subject<any> = new Subject();
+  constructor(public store: Store<State>, public changeDetectorRef: ChangeDetectorRef) {
     this.productList = [];
     this.productCategory = new Array<{}>();
    }
 
   ngOnInit() {
     this.loadData();
+    this.deviceSize$ = this.store.pipe(distinctUntilChanged(), select(selectDeviceSize));
+    this.deviceSize$.pipe(takeUntil(this.unsubscribe$)).subscribe(size => {
+      this.updateComponent();
+    });
+  }
+
+  updateComponent(): void {
+    this.changeDetectorRef.detectChanges();
   }
 
   loadData(): void {
@@ -201,5 +219,10 @@ export class ProductsComponent implements OnInit {
 
   showProductDetail(product: any): void {
 
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

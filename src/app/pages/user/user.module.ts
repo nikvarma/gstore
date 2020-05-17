@@ -9,6 +9,7 @@ import { ChatSupportComponent } from './chat-support/chat-support.component';
 import { UserRoutingModule } from './user.router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UserLandingComponent } from 'src/app/shared/layouts/user-landing/user-landing.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     PaymentModeComponent,
     OrderStatusComponent,
     ChatSupportComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserLandingComponent
   ],
   imports: [
     CommonModule,

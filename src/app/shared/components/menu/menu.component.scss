@@ -1,0 +1,27 @@
+.menu-items {
+  & .menu-links {
+    & .item-link {
+      line-height: inherit;
+    }
+    & .ant-menu {
+      box-shadow: none;
+      border-right: 0;
+    }
+    & .menu-links-content {
+      overflow-x: hidden;
+    }
+  }
+  & .logo-section {
+    padding: 15px;
+    text-align: center;
+    & .logo-image {
+      width: 150px;
+      margin: auto;
+      padding: 15px;
+    }
+    & .logo-text {
+      padding: 0 15px;
+      text-align: center;
+    }
+  }
+}

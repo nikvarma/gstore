@@ -1,6 +1,14 @@
 .top-header {
+  & .top-menu-bars {
+    border: 0;
+    color: white;
+    background-color: transparent;
+  }
   & .user-profile {
+    height: 35px;
     margin: auto 5px;
+    line-height: 35px;
+    display: inline-block;
     & nz-avatar {
       margin: auto 5px;
       border: 2px solid;
@@ -19,6 +27,26 @@
       display: inline-flex;
       text-overflow: ellipsis;
     }
+  }
+  & .search-input-btn {
+    border: 0;
+    width: 100%;
+    color: #666;
+    outline: none;
+    height: 35px;
+    font-size: 12px;
+    text-align: left;
+    margin: 5px auto;
+    line-height: 35px;
+    border-radius: 3px;
+    background-color: white;    
+  }
+  & .search-btn-icon {
+    right: 20px;
+    color: #0cc5b7;
+    font-size: 18px;
+    bottom: 8px;
+    position: absolute;
   }
 }
 .search-products {

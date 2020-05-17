@@ -6,7 +6,8 @@
             </div>
             <span [class.veg-tick]="item.vegStatus === 'veg'"
                 [class.non-veg-tick]="item.vegStatus === 'non-veg'"
-                [class.veg-nonveg-tick]="item.vegStatus === 'veg-nonveg'" class="veg-status"></span>
+                [class.veg-nonveg-tick]="item.vegStatus === 'veg-nonveg'"
+                [class.large]="(deviceSize$ | async) > 2" class="veg-status large"></span>
             <span class="badge product-badge badge-success" [innerText]="item.discountInPer + '% OFF'"></span>
             <h5 class="cart-title font-b500 font-14 secondary-text" [innerText]="item.title"></h5>
             <h6 class="font-12">
@@ -20,6 +21,10 @@
                 <span class="font-12 font-b500" [innerText]="item.weight + ' ' + item.weightUnit"></span>
             </h6>
             <p class="offer-price">
+                <nz-select class="quantity-select" nzSize="small">
+                    <nz-option nzValue="1" nzLabel="1"></nz-option>
+                </nz-select>
+                <span class="mlr-2">x</span>
                 <span class="discount-price font-14 font-b500 text-drak" [innerText]="(item.discountInPer / 100) * item.actualPrice"></span>
                 <i nz-icon nzType="tags" class="m-5 text-drak font-14" nzTheme="outline"></i>
                 <span class="regular-price font-12 line-through" [innerText]="item.actualPrice"></span>

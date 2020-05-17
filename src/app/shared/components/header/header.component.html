@@ -31,72 +31,86 @@
 <div class="bg-default pb-2 pt-2 top-header">
     <div class="app-container">
         <div nz-row>
-            <div nz-col nzMd="4" nzLg="6" nzSm="24" nzXs="24" class="plr-1 logo-box">
+            <div nz-col nzMd="2" nzLg="6" nzSm="20" nzXs="20" class="plr-1 logo-box">
+                <button nz-button (click)="openMenu()"
+                class="top-menu-bars mr-2 hide-md hide-lg hide-xlg">
+                    <i nz-icon nzType="menu" nzTheme="outline"></i>
+                </button>
                 <a [routerLink]="['home']" class="logo-text">
-                    <span class="mr-4">
-                        <i nz-icon nzType="shopping" nzTheme="outline"></i>
+                    <span class="mr-4 logo-image">
+                        <img src="assets/ddoor-logo.png" class="sm-img" />
                     </span>
-                    <span class="hide-xsm hide-sm">GroceriStore</span>
+                    <span class="hide-xsm hide-sm hide-md">DDoorStore</span>
+                    <!-- GroceriStore -->
                 </a>
             </div>
-            <div nz-col nzMd="16" nzLg="12" nzSm="24" nzXs="24" class="plr-1">
+            <div nz-col nzMd="14" nzLg="12" class="plr-1 hide-sm hide-xsm">
                 <div class="search-products flex-spacer">
                     <auto-complete-search class="min-w100"></auto-complete-search>
                 </div>
             </div>
-            <div nz-col nzMd="4" nzLg="6" class="plr-1 text-right">
+            <div nz-col nzMd="8" nzSm="4" nzXs="4" nzLg="6" class="plr-1 text-right">
                 <span class="flex-spacer"></span>
-                <a nz-dropdown class="user-profile" [nzDropdownMenu]="profileMenu" nzPlacement="bottomRight">
-                    <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
-                    </nz-avatar>
-                    <span class="username-link">Hi, Ana</span>
-                    <i nz-icon nzType="caret-down" nzTheme="outline" class="text-white"></i>
-                    <nz-dropdown-menu #profileMenu="nzDropdownMenu">
-                        <ul nz-menu class="profile-dropdown">
-                            <li nz-menu-item>
-                                <a [routerLink]="['user', 'profile']">
-                                    <i nz-icon nzType="user" class="mr-2" nzTheme="outline"></i> My Profile
-                                </a>
-                            </li>
-                            <li nz-menu-item>
-                                <a [routerLink]="['user', 'settings']">
-                                    <i nz-icon nzType="setting" class="mr-2" nzTheme="outline"></i> Settings
-                                </a>
-                            </li>
-                            <li nz-menu-item>
-                                <a [routerLink]="['user', 'wish-list']">
-                                    <i nz-icon nzType="heart" class="mr-2" nzTheme="outline"></i> Wish List
-                                </a>
-                            </li>
-                            <li nz-menu-item>
-                                <a [routerLink]="['user', 'orders']">
-                                    <i nz-icon nzType="solution" class="mr-2" nzTheme="outline"></i> Order List
-                                </a>
-                            </li>
-                            <li nz-menu-item>
-                                <a [routerLink]="['user', 'order-status']">
-                                    <i nz-icon nzType="hourglass" class="mr-2" nzTheme="outline"></i> Order Status
-                                </a>
-                            </li>
-                            <li nz-menu-divider></li>
-                            <li nz-menu-item>
-                                <i nz-icon nzType="logout" nzTheme="outline"></i> Logout
-                            </li>
-                        </ul>
-                    </nz-dropdown-menu>
-                </a>
-
+                <div class="inline-block-content hide-sm hide-xsm">
+                    <a nz-dropdown class="user-profile" [nzDropdownMenu]="profileMenu" nzPlacement="bottomRight">
+                        <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                        </nz-avatar>
+                        <span class="username-link">Hi, Ana</span>
+                        <i nz-icon nzType="caret-down" nzTheme="outline" class="text-white"></i>
+                        <nz-dropdown-menu #profileMenu="nzDropdownMenu">
+                            <ul nz-menu class="profile-dropdown">
+                                <li nz-menu-item>
+                                    <a [routerLink]="['user', 'profile']">
+                                        <i nz-icon nzType="user" class="mr-2" nzTheme="outline"></i> My Profile
+                                    </a>
+                                </li>
+                                <li nz-menu-item>
+                                    <a [routerLink]="['user', 'settings']">
+                                        <i nz-icon nzType="setting" class="mr-2" nzTheme="outline"></i> Settings
+                                    </a>
+                                </li>
+                                <li nz-menu-item>
+                                    <a [routerLink]="['user', 'wishlist']">
+                                        <i nz-icon nzType="heart" class="mr-2" nzTheme="outline"></i> Wish List
+                                    </a>
+                                </li>
+                                <li nz-menu-item>
+                                    <a [routerLink]="['user', 'orders']">
+                                        <i nz-icon nzType="solution" class="mr-2" nzTheme="outline"></i> Order List
+                                    </a>
+                                </li>
+                                <li nz-menu-item>
+                                    <a [routerLink]="['user', 'order-status']">
+                                        <i nz-icon nzType="hourglass" class="mr-2" nzTheme="outline"></i> Order Status
+                                    </a>
+                                </li>
+                                <li nz-menu-divider></li>
+                                <li nz-menu-item (click)="logout($event)">
+                                    <i nz-icon nzType="logout" nzTheme="outline"></i> Logout
+                                </li>
+                            </ul>
+                        </nz-dropdown-menu>
+                    </a>
+                </div>                
                 <nz-badge [nzCount]="5" class="badge-box mlr-2">
                     <button nz-button nzShape="circle" (click)="openCart()">
                         <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
                     </button>
                 </nz-badge>
             </div>
+            <div nz-col nzSm="24" nzXs="24" class="plr-1 hide-lg hide-xlg hide-md">
+                <div class="search-products flex-spacer">
+                    <button nz-button class="search-input-btn">Search for products</button>
+                    <span class="search-btn-icon">
+                        <i nz-icon nzType="search" nzTheme="outline"></i>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="bg-white shadow-b">
+<div class="bg-white shadow-b hide-sm hide-xsm">
     <div class="app-container">
         <div class="product-menu-top plr-1" [ngClass]="(menuMode == 'horizontal') ? 'vertical-top-menu' : ''">
             <ul nz-menu [nzMode]="menuMode">
@@ -132,6 +146,7 @@
         </div>
     </div>
 </div>
+<!-- show cart -->
 <nz-drawer [nzVisible]="showMyCart" [nzTitle]="cartHeader" (nzOnClose)="openCart()" nzClosable="true"
     [nzBodyStyle]="{ height: 'calc(100% - 150px)', overflow: 'auto', 'padding-bottom': '55px' }"
     nzWrapClassName="cart-drawer">
@@ -150,3 +165,9 @@
         </h5>
     </div>
 </ng-template>
+
+<!-- show menu -->
+<nz-drawer [nzVisible]="showMenu" nzClosable="false" (nzOnClose)="openMenu()" nzPlacement="left"
+    [nzBodyStyle]="{ overflow: 'auto', padding: '0' }" nzWrapClassName="menu-drawer">
+    <app-menu class="block-content"></app-menu>
+</nz-drawer>

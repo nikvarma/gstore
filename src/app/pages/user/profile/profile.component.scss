@@ -1,3 +1,6 @@
 .user-profile-page {
   position: relative;
+  & .header-section {
+    position: relative;
+  }
 }

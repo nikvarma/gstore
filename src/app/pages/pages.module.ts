@@ -12,6 +12,7 @@ import { SelectDeliverySlotComponent } from './select-delivery-slot/select-deliv
 import { ErrorsComponent } from './errors/errors.component';
 import { SharedModule } from '../shared/shared.module';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class PagesModule { }

@@ -1,1 +1,18 @@
-<p>orders works!</p>
+<div class="user-orders-page">
+    <div class="app-container shadow-b p-1 bg-white">
+        <div nz-row>
+            <div nz-col nzMd="24" nzLg="24">
+                <div class="header-section" [class.mlr-2]="(deviceSize$ | async) <= 2">
+                    <h5 class="font-18">
+                        Order List
+                    </h5>
+                </div>
+                <div class="form-section" [class.mlr-2]="(deviceSize$ | async) <= 2">
+                    <div nz-row [nzGutter]="24">
+                        <app-table-gird></app-table-gird>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

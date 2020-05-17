@@ -11,6 +11,7 @@ export class CardProductComponent implements OnInit {
   isAddedInCart: boolean;
   sameItemInCartCount: number = 0;
   @Input() productDetail: ProductList;
+  @Input() showSubtitle: boolean = true;
   constructor() { }
 
   ngOnInit() {

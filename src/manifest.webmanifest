@@ -1,7 +1,7 @@
 {
   "name": "hapistore",
   "short_name": "hapistore",
-  "theme_color": "#1976d2",
+  "theme_color": "#0cc5b7",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",

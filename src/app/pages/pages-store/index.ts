@@ -1,11 +1,9 @@
-import * as StorePageStoreActions from './action';
-import * as StorePageStoreSelectors from './selector';
-import * as StorePageStoreState from './state';
-
-export { StorePageStoreModule } from './pages-store.module';
+import { StoreState } from "./page-store.state";
+import { storeReducer } from "./page-store.reducer";
+import { StoreEffects } from "./page-store.effects";
 
 export {
-    StorePageStoreActions,
-    StorePageStoreSelectors,
-    StorePageStoreState
-}
+    StoreState,
+    storeReducer,
+    StoreEffects
+};

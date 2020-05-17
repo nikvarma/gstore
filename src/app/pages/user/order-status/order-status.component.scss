@@ -1,4 +1,7 @@
 .order-status-page {
+  & .header-section {
+    position: relative;
+  }
   & nz-timeline-item {
     & .timeline-active {
       color: #0cc5b7;
