@@ -1,0 +1,23 @@
+<div size-detector (onSizeChange)="onSizeChange($event)">
+    <nz-layout class="layout">
+        <nz-sider nzCollapsible class="menu-left-side hide-md" [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'"
+            [nzCollapsedWidth]="0" [nzZeroTrigger]="zeroTrigger">
+        </nz-sider>
+        <nz-layout>
+            <nz-header class="ant-top-header">
+                <nz-affix>
+                    
+                </nz-affix>
+            </nz-header>
+            <nz-content class="ant-render-content">
+                <router-outlet></router-outlet>
+            </nz-content>
+            <nz-footer class="ant-bottom-footer">
+                
+            </nz-footer>
+        </nz-layout>
+    </nz-layout>
+    <ng-template #zeroTrigger>
+        <i nz-icon nzType="menu-fold" nzTheme="outline"></i>
+    </ng-template>
+</div>
