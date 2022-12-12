@@ -40,7 +40,7 @@
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
     "carbon-components": "^10.9.2",
     "carbon-components-angular": "^3.36.1",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "ng-zorro-antd": "^8.5.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
